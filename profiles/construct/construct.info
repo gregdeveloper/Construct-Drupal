@@ -1,0 +1,58 @@
+name = Construct
+description = Construct aims to be the best 'out of the box' starting point for building an editable website for a small to medium company.
+version = VERSION
+core = 7.x
+
+; Core standard modules
+dependencies[] = block
+dependencies[] = color
+dependencies[] = comment
+dependencies[] = contextual
+dependencies[] = dashboard
+dependencies[] = help
+dependencies[] = image
+dependencies[] = list
+dependencies[] = menu
+dependencies[] = number
+dependencies[] = options
+dependencies[] = path
+dependencies[] = taxonomy
+dependencies[] = dblog
+dependencies[] = search
+dependencies[] = shortcut
+dependencies[] = toolbar
+dependencies[] = overlay
+dependencies[] = field_ui
+dependencies[] = file
+dependencies[] = rdf
+
+; Construct modules
+dependencies[] = admin_menu
+dependencies[] = ckeditor
+dependencies[] = contact_form_blocks
+dependencies[] = context
+dependencies[] = ctools
+dependencies[] = devel
+dependencies[] = edit
+dependencies[] = elements
+dependencies[] = features
+dependencies[] = fences
+dependencies[] = flexslider
+dependencies[] = flickr
+dependencies[] = fontyourface
+dependencies[] = google_analytics
+dependencies[] = html5_tools
+dependencies[] = imce
+dependencies[] = jcarousel
+dependencies[] = jquery_update
+dependencies[] = libraries
+dependencies[] = panels
+dependencies[] = pathauto
+dependencies[] = socialmedia
+dependencies[] = token
+dependencies[] = views
+dependencies[] = views_slideshow
+dependencies[] = webform
+
+; System Requirements.
+; php_memory_limit = 128M
