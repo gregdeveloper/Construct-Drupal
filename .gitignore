@@ -1,0 +1,41 @@
+# Ignore netbeans project files
+/nbproject/
+
+# Ignore configuration files that may contain sensitive information.
+sites/*/settings*.php
+
+# Ignore paths that contain user-generated content.
+sites/*/files
+sites/*/private
+
+# Ignore stuff provided by drupal core
+/includes/
+/misc/
+/modules/
+/profiles/testing/
+/profiles/minimal/
+/profiles/standard/
+/scripts/
+/themes/
+/robots.txt
+/install.php
+/update.php
+/LICENSE.txt
+/COPYRIGHT.txt
+/INSTALL.mysql.txt
+/web.config
+/MAINTAINERS.txt
+/INSTALL.sqlite.txt
+/xmlrpc.php
+/authorize.php
+/index.php
+/.htaccess
+/README.txt
+/INSTALL.txt
+/CHANGELOG.txt
+/UPGRADE.txt
+/INSTALL.pgsql.txt
+/cron.php
+/sites/example.sites.php
+/sites/README.txt
+
