@@ -1,0 +1,16 @@
+/* 
+  macro arrangement of a web page, including any grid systems
+*/
+
+/* STRUCTURE */
+.section{
+  width:90%;
+  max-width:1200px;
+  margin:0 auto;
+  overflow:visible;
+  position:relative;
+}
+
+.section .section{
+  width:100%;
+}

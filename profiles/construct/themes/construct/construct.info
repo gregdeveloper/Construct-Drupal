@@ -1,0 +1,11 @@
+name = Construct
+description = This is the default theme for the Construct Drupal distribution
+package = Core
+version = VERSION
+core = 7.x
+
+stylesheets[all][] = css/base.css
+stylesheets[all][] = css/layout.css
+stylesheets[all][] = css/component.css
+stylesheets[all][] = css/state.css
+stylesheets[all][] = css/theme.css

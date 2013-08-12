@@ -1,0 +1,80 @@
+/* 
+  CSS reset/normalize plus HTML element styling
+  Base styles include setting heading sizes,
+  default link styles, default font styles,
+  and body backgrounds.
+  There should be no need to use !important in a Base style.
+*/
+
+*, html, body{
+  margin:0;
+  padding:0;
+}
+
+body{
+  background:rgb(255,255,255);
+  font-family:Verdana, Arial, Helvetica, sans-serif;
+  font-size:100%;
+}
+
+/* HEADINGS */
+h1,h2,h3,h4{
+  font-family:Verdana, Arial, Helvetica, sans-serif;
+  text-transform:uppercase;
+  color:rgb(60,60,60);
+}
+h1{
+  font-size:5em;
+}
+h2{
+  font-size:3em;
+}
+h3{
+  font-size:1.8em;
+}
+h4{
+  font-size:1.4em;
+}
+
+/* TEXT */
+p{
+  font-family:Verdana, Arial, Helvetica, sans-serif;
+  font-size:1em;
+  line-height:1.6;
+  color:rgb(20,20,20);
+}
+a{
+  color:rgb(30,30,30);
+  text-decoration:none;
+}
+a:hover{
+  color:rgb(0,0,0);
+}
+a img{
+  border:none;
+}
+
+/* FORMS */
+form input{
+
+}
+fieldset{
+  padding:2%;
+  margin:2% 0;
+}
+legend{
+  font-size:1.2em;
+}
+textarea{
+  font-size:1em;
+}
+
+/* NAVIGATION */
+nav ul{
+  list-style:none;
+}
+nav ul li,
+nav ul li a{
+  display:block;
+  float:left;
+}
