@@ -1,0 +1,47 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the teaserimage module.
+ *
+ */
+
+/**
+ * Implements hook_schema().
+ */
+function teaserimage_schema() {
+  $schema['teaserimage'] = array(
+    'fields' => array(
+      'nid' => array(
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => 'The {node}.nid associated with the thumbnail.',
+      ),
+      'filepath' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+        'description' => 'Path of the thumbnail source file.',
+      ),
+      'from_attach' => array(
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+    ),
+    'primary key' => array('nid'),
+  );
+
+  return $schema;
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function teaserimage_uninstall() {
+  db_delete('variable')->condition('name', 'teaserimage_%', 'LIKE')->execute();
+  cache_clear_all('variables', 'cache');
+}
