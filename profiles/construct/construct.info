@@ -27,7 +27,6 @@ dependencies[] = file
 dependencies[] = rdf
 
 ; Construct modules
-dependencies[] = admin_menu
 dependencies[] = ckeditor
 dependencies[] = contact_form_blocks
 dependencies[] = context
@@ -58,6 +57,9 @@ dependencies[] = token
 dependencies[] = views
 dependencies[] = views_slideshow
 dependencies[] = webform
+
+; Construct Features
+
 
 ; System Requirements.
 ; php_memory_limit = 128M

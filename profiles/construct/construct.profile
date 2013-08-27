@@ -1,5 +1,5 @@
 <?php
 
-/* This file is used to add steps the install process */
+/* This file is used to add, alter or remove steps the install process */
 
 ?>
