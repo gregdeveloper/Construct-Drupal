@@ -49,6 +49,7 @@ dependencies[] = jquery_update
 dependencies[] = libraries
 dependencies[] = lightbox2
 dependencies[] = link
+dependencies[] = module_filter
 dependencies[] = panels
 dependencies[] = pathauto
 dependencies[] = socialmedia
