@@ -4,9 +4,27 @@
  *
  * Perform actions to set up the site for this profile.
  */
+
 function construct_install() {
   include_once DRUPAL_ROOT . '/profiles/standard/standard.install';
   standard_install();
-  theme_enable(array('construct'));
+  
+  theme_enable(
+    array(
+      'construct',
+      'seven',
+      'zen'
+    )
+  );
+  
+  variable_set('theme_default', 'construct');
+  variable_set('admin_theme', 'seven');
+  
+  theme_disable(
+    array(
+      'bartik'
+    )
+  );
 }
+
 ?>
