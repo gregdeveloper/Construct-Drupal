@@ -45,4 +45,4 @@
     <div class="section clearfix">
       <?php print render($page['footer']); ?>
     </div>
-  </div> <!-- /.section, /#footer -->
+  </footer> <!-- /.section, /#footer -->

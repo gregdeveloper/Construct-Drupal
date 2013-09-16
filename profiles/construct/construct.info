@@ -27,6 +27,7 @@ dependencies[] = file
 dependencies[] = rdf
 
 ; Construct modules
+dependencies[] = block_class
 dependencies[] = ckeditor
 dependencies[] = contact_form_blocks
 dependencies[] = context
