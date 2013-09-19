@@ -28,7 +28,7 @@
 <?php endif; ?>
 
 <?php if ($page['featured']): ?>
-<div id="news" class="news">
+<div id="featured" class="featured">
   <div class="section">
     <?php print render($page['featured']); ?>
   </div>

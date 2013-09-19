@@ -9,8 +9,8 @@ files[] = fontdeck.install
 files[] = fontdeck.module
 
 ; Information added by drupal.org packaging script on 2013-04-29
-version = "7.x-2.8"
+version = "7.x-2.8+0-dev"
 core = "7.x"
 project = "fontyourface"
-datestamp = "1367195415"
+datestamp = "1367196987"
 

@@ -1,28 +1,28 @@
 <?php
 /**
  * @file
- * products.views_default.inc
+ * teams.views_default.inc
  */
 
 /**
  * Implements hook_views_default_views().
  */
-function products_views_default_views() {
+function teams_views_default_views() {
   $export = array();
 
   $view = new view();
-  $view->name = 'products';
+  $view->name = 'teams';
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'node';
-  $view->human_name = 'Products';
+  $view->human_name = 'Teams';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Products';
+  $handler->display->display_options['title'] = 'Teams';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -56,20 +56,20 @@ function products_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'product_category' => 'product_category',
+    'team' => 'team',
   );
 
-  /* Display: Products Page */
-  $handler = $view->new_display('page', 'Products Page', 'products_page');
-  $handler->display->display_options['display_description'] = 'Displays a list of product category teasers';
+  /* Display: Teams Page */
+  $handler = $view->new_display('page', 'Teams Page', 'teams_page');
+  $handler->display->display_options['display_description'] = 'Displays a list of teams';
   $handler->display->display_options['path'] = 'products';
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Products';
   $handler->display->display_options['menu']['name'] = 'main-menu';
 
-  /* Display: Products Block */
-  $handler = $view->new_display('block', 'Products Block', 'products_block');
-  $handler->display->display_options['display_description'] = 'Displays products in a carousel';
+  /* Display: Teams Block */
+  $handler = $view->new_display('block', 'Teams Block', 'teams_block');
+  $handler->display->display_options['display_description'] = 'Displays teams in a carousel';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '5';
@@ -93,12 +93,12 @@ function products_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'product' => 'product',
+    'team' => 'team',
   );
 
-  /* Display: Product Models */
-  $handler = $view->new_display('block', 'Product Models', 'product_models_block');
-  $handler->display->display_options['display_description'] = 'Displays current product\'s models in a carousel';
+  /* Display: Team Members */
+  $handler = $view->new_display('block', 'Team Members', 'team_members_block');
+  $handler->display->display_options['display_description'] = 'Displays current team\'s members in a carousel';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Product (field_product) */
   $handler->display->display_options['arguments']['field_product_target_id']['id'] = 'field_product_target_id';
@@ -112,7 +112,7 @@ function products_views_default_views() {
   $handler->display->display_options['arguments']['field_product_target_id']['specify_validation'] = TRUE;
   $handler->display->display_options['arguments']['field_product_target_id']['validate']['type'] = 'node';
   $handler->display->display_options['arguments']['field_product_target_id']['validate_options']['types'] = array(
-    'product_category' => 'product_category',
+    'team' => 'team',
   );
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
@@ -128,28 +128,9 @@ function products_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'product_model' => 'product_model',
+    'team_member' => 'team_member',
   );
-
-  /* Display: Category Products */
-  $handler = $view->new_display('block', 'Category Products', 'category_products_block');
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'product' => 'product',
-  );
-  $export['products'] = $view;
+  $export['teams'] = $view;
 
   return $export;
 }
