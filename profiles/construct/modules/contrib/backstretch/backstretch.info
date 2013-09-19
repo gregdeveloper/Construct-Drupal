@@ -1,0 +1,10 @@
+name = Backstretch
+description = Integrates the jQuery Backstretch plugin.
+core = 7.x
+
+; Information added by drupal.org packaging script on 2013-06-04
+version = "7.x-2.x-dev"
+core = "7.x"
+project = "backstretch"
+datestamp = "1370306346"
+

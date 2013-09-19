@@ -27,6 +27,7 @@ dependencies[] = file
 dependencies[] = rdf
 
 ; Construct modules
+dependencies[] = backstretch
 dependencies[] = block_class
 dependencies[] = ckeditor
 dependencies[] = contact_form_blocks
@@ -42,7 +43,9 @@ dependencies[] = fences
 dependencies[] = flexslider
 dependencies[] = flexslider_views_slideshow
 dependencies[] = flickr
+dependencies[] = fontsquirrel
 dependencies[] = fontyourface
+dependencies[] = fontyourface_ui
 dependencies[] = googleanalytics
 dependencies[] = html5_tools
 dependencies[] = imce
@@ -60,7 +63,9 @@ dependencies[] = teaserimage
 dependencies[] = token
 dependencies[] = views
 dependencies[] = views_slideshow
+dependencies[] = views_ui
 dependencies[] = webform
+
 
 ; Construct Features
 
