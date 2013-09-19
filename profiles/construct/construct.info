@@ -59,7 +59,6 @@ dependencies[] = pathauto
 dependencies[] = pathologic
 dependencies[] = scanner
 dependencies[] = socialmedia
-dependencies[] = teaserimage
 dependencies[] = token
 dependencies[] = token_filter
 dependencies[] = views
