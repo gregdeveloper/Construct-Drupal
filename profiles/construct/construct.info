@@ -61,6 +61,7 @@ dependencies[] = scanner
 dependencies[] = socialmedia
 dependencies[] = teaserimage
 dependencies[] = token
+dependencies[] = token_filter
 dependencies[] = views
 dependencies[] = views_slideshow
 dependencies[] = views_ui
