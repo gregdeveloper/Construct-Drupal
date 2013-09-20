@@ -22,7 +22,7 @@ function portfolio_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Products';
+  $handler->display->display_options['title'] = 'Portfolio';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -78,10 +78,13 @@ function portfolio_views_default_views() {
   /* Display: Portfolio Page */
   $handler = $view->new_display('page', 'Portfolio Page', 'portfolio_page');
   $handler->display->display_options['display_description'] = 'Displays a list of portfolio project teasers';
-  $handler->display->display_options['path'] = 'products';
+  $handler->display->display_options['path'] = 'portfolio';
   $handler->display->display_options['menu']['type'] = 'normal';
-  $handler->display->display_options['menu']['title'] = 'Products';
+  $handler->display->display_options['menu']['title'] = 'Portfolio';
+  $handler->display->display_options['menu']['weight'] = '0';
   $handler->display->display_options['menu']['name'] = 'main-menu';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
 
   /* Display: Portfolio Block */
   $handler = $view->new_display('block', 'Portfolio Block', 'portfolio_block');

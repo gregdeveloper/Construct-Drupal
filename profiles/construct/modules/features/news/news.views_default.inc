@@ -79,6 +79,13 @@ function news_views_default_views() {
   /* Display: News Page */
   $handler = $view->new_display('page', 'News Page', 'news_page');
   $handler->display->display_options['path'] = 'news';
+  $handler->display->display_options['menu']['type'] = 'normal';
+  $handler->display->display_options['menu']['title'] = 'News';
+  $handler->display->display_options['menu']['description'] = 'Latest News';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['name'] = 'main-menu';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
 
   /* Display: News Block */
   $handler = $view->new_display('block', 'News Block', 'news_block');
