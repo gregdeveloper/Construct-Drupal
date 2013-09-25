@@ -100,7 +100,7 @@ function construct_products_views_default_views() {
   $handler = $view->new_display('block', 'Product Models', 'product_models_block');
   $handler->display->display_options['display_description'] = 'Displays current product\'s models in a carousel';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Product (field_product) */
+  /* Contextual filter: Broken/missing handler */
   $handler->display->display_options['arguments']['field_product_target_id']['id'] = 'field_product_target_id';
   $handler->display->display_options['arguments']['field_product_target_id']['table'] = 'field_data_field_product';
   $handler->display->display_options['arguments']['field_product_target_id']['field'] = 'field_product_target_id';
