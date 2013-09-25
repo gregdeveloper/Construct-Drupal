@@ -1,0 +1,16 @@
+name = Patterns Components
+description = A collection of components (drivers) to communicate with Drupal forms. 
+dependencies[] = patterns
+dependencies[] = patterns_export
+
+core = 7.x
+version = 7.x-2.x-dev
+package = Patterns
+php = 5.2
+
+; Information added by drupal.org packaging script on 2013-08-19
+version = "7.x-2.0"
+core = "7.x"
+project = "patterns"
+datestamp = "1376906237"
+
