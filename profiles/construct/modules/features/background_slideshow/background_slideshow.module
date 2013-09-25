@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Background Slideshow feature.
- */
-
-include_once 'background_slideshow.features.inc';

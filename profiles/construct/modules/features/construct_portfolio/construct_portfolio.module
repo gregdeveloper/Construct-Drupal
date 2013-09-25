@@ -1,0 +1,13 @@
+<?php
+/**
+ * @file
+ * Code for the Construct Portfolio feature.
+ */
+
+include_once 'construct_portfolio.features.inc';
+/**
+ * @file
+ * Code for the Portfolio feature.
+ */
+
+include_once 'construct_news.features.inc';
