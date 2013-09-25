@@ -33,6 +33,7 @@ dependencies[] = ckeditor
 dependencies[] = contact_form_blocks
 dependencies[] = context
 dependencies[] = ctools
+dependencies[] = data_export_import
 dependencies[] = devel
 dependencies[] = devel_generate
 dependencies[] = edit
