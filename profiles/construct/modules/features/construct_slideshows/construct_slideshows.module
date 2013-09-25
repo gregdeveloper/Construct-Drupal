@@ -10,4 +10,4 @@ include_once 'construct_slideshows.features.inc';
  * Code for the Header Slideshow feature.
  */
 
-include_once 'construct_slideshow.features.inc';
+include_once 'construct_slideshows.features.inc';

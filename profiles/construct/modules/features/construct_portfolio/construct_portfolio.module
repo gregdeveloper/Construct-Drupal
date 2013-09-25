@@ -10,4 +10,4 @@ include_once 'construct_portfolio.features.inc';
  * Code for the Portfolio feature.
  */
 
-include_once 'construct_news.features.inc';
+include_once 'construct_portfolio.features.inc';

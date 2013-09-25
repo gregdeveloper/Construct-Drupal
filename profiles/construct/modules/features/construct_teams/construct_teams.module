@@ -4,4 +4,4 @@
  * Code for the Teams feature.
  */
 
-include_once 'teams.features.inc';
+include_once 'construct_teams.features.inc';
