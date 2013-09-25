@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Backstretch Background feature.
- */
-
-include_once 'backstretch_background.features.inc';

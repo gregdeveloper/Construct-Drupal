@@ -20,7 +20,11 @@ function header_slideshow_field_default_field_instances() {
       'default' => array(
         'label' => 'hidden',
         'module' => 'text',
-        'settings' => array(),
+        'settings' => array(
+          'edit' => array(
+            'editor' => 'direct',
+          ),
+        ),
         'type' => 'text_default',
         'weight' => 0,
       ),

@@ -35,24 +35,19 @@
 </div>
 <?php endif; ?>
 
-<?php if ($breadcrumb): ?>
-  <div id="breadcrumb">
-    <?php print $breadcrumb; ?>
-  </div>
-<?php endif; ?>
-
 <?php print $messages; ?>
 
 <div id="content" class="content" role="main">
   <div class="section">
+    <?php if ($breadcrumb): ?>
+      <div id="breadcrumb">
+        <?php print $breadcrumb; ?>
+      </div>
+    <?php endif; ?>
     <?php print render($page['content']); ?>
   </div>
 </div>
 
-<footer id="footer">
-  <div class="section">
-    <?php print render($page['footer']); ?>
-  </div>
-</footer> <!-- /.section, /#footer -->
+<?php print render($page['footer']); ?>
 
 <?php print render($page['bottom']); ?>

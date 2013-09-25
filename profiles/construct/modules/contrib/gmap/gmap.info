@@ -1,0 +1,16 @@
+name = GMap
+description = Views plugins to show Google Maps from entities.
+core = 7.x
+package = Location
+configure = admin/config/services/gmap
+
+files[] = gmap_plugin_style_gmap.inc
+files[] = gmap_plugin_style_gmapextended.inc
+files[] = tests/gmap.test
+
+; Information added by drupal.org packaging script on 2013-09-11
+version = "7.x-2.8-beta5+0-dev"
+core = "7.x"
+project = "gmap"
+datestamp = "1378892225"
+

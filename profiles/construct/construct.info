@@ -34,6 +34,7 @@ dependencies[] = contact_form_blocks
 dependencies[] = context
 dependencies[] = ctools
 dependencies[] = devel
+dependencies[] = devel_generate
 dependencies[] = edit
 dependencies[] = elements
 dependencies[] = entity
@@ -43,7 +44,6 @@ dependencies[] = fences
 dependencies[] = flexslider
 dependencies[] = flexslider_views_slideshow
 dependencies[] = flickr
-dependencies[] = fontsquirrel
 dependencies[] = fontyourface
 dependencies[] = fontyourface_ui
 dependencies[] = googleanalytics
@@ -53,6 +53,12 @@ dependencies[] = jquery_update
 dependencies[] = libraries
 dependencies[] = lightbox2
 dependencies[] = link
+dependencies[] = local_fonts
+dependencies[] = metatag
+dependencies[] = metatag_opengraph
+dependencies[] = metatag_panels
+dependencies[] = metatag_twitter_cards
+dependencies[] = metatag_views
 dependencies[] = module_filter
 dependencies[] = panels
 dependencies[] = pathauto
@@ -65,7 +71,6 @@ dependencies[] = views
 dependencies[] = views_slideshow
 dependencies[] = views_ui
 dependencies[] = webform
-
 
 ; Construct Features
 
