@@ -1,20 +1,20 @@
 <?php
 /**
  * @file
- * teams.features.inc
+ * construct_teams.features.inc
  */
 
 /**
  * Implements hook_views_api().
  */
-function teams_views_api($module = NULL, $api = NULL) {
+function construct_teams_views_api($module = NULL, $api = NULL) {
   return array("api" => "3.0");
 }
 
 /**
  * Implements hook_node_info().
  */
-function teams_node_info() {
+function construct_teams_node_info() {
   $items = array(
     'team' => array(
       'name' => t('Team'),

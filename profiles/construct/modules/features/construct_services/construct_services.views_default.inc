@@ -61,7 +61,7 @@ function construct_services_views_default_views() {
 
   /* Display: Services Page */
   $handler = $view->new_display('page', 'Services Page', 'construct_services_page');
-  $handler->display->display_options['path'] = 'construct_services';
+  $handler->display->display_options['path'] = 'services';
 
   /* Display: Services Block */
   $handler = $view->new_display('block', 'Services Block', 'construct_services_block');

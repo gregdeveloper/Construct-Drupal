@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * teams.views_default.inc
+ * construct_teams.views_default.inc
  */
 
 /**
  * Implements hook_views_default_views().
  */
-function teams_views_default_views() {
+function construct_teams_views_default_views() {
   $export = array();
 
   $view = new view();
@@ -56,16 +56,20 @@ function teams_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
+    'product_category' => 'product_category',
     'team' => 'team',
   );
 
   /* Display: Teams Page */
   $handler = $view->new_display('page', 'Teams Page', 'teams_page');
-  $handler->display->display_options['display_description'] = 'Displays a list of teams';
-  $handler->display->display_options['path'] = 'products';
+  $handler->display->display_options['display_description'] = 'Displays a list of Teams';
+  $handler->display->display_options['path'] = 'teams';
   $handler->display->display_options['menu']['type'] = 'normal';
-  $handler->display->display_options['menu']['title'] = 'Products';
+  $handler->display->display_options['menu']['title'] = 'Teams';
+  $handler->display->display_options['menu']['weight'] = '0';
   $handler->display->display_options['menu']['name'] = 'main-menu';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
 
   /* Display: Teams Block */
   $handler = $view->new_display('block', 'Teams Block', 'teams_block');
@@ -98,20 +102,21 @@ function teams_views_default_views() {
 
   /* Display: Team Members */
   $handler = $view->new_display('block', 'Team Members', 'team_members_block');
-  $handler->display->display_options['display_description'] = 'Displays current team\'s members in a carousel';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Product (field_product) */
-  $handler->display->display_options['arguments']['field_product_target_id']['id'] = 'field_product_target_id';
-  $handler->display->display_options['arguments']['field_product_target_id']['table'] = 'field_data_field_product';
-  $handler->display->display_options['arguments']['field_product_target_id']['field'] = 'field_product_target_id';
-  $handler->display->display_options['arguments']['field_product_target_id']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['field_product_target_id']['default_argument_type'] = 'node';
-  $handler->display->display_options['arguments']['field_product_target_id']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['field_product_target_id']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['field_product_target_id']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['arguments']['field_product_target_id']['specify_validation'] = TRUE;
-  $handler->display->display_options['arguments']['field_product_target_id']['validate']['type'] = 'node';
-  $handler->display->display_options['arguments']['field_product_target_id']['validate_options']['types'] = array(
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'raw';
+  $handler->display->display_options['arguments']['nid']['default_argument_options']['index'] = '1';
+  $handler->display->display_options['arguments']['nid']['default_argument_options']['use_alias'] = TRUE;
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['nid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['nid']['validate']['type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['validate_options']['types'] = array(
     'team' => 'team',
   );
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
