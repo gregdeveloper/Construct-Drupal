@@ -68,6 +68,7 @@ dependencies[] = panels
 dependencies[] = pathauto
 dependencies[] = pathologic
 dependencies[] = scanner
+dependencies[] = single_image
 dependencies[] = socialmedia
 dependencies[] = token
 dependencies[] = token_filter
