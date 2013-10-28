@@ -6,9 +6,17 @@
  */
 
 function construct_install() {
+  
+  /**
+   * Do a standard install
+   */
   include_once DRUPAL_ROOT . '/profiles/standard/standard.install';
   standard_install();
   
+  
+  /**
+   * Enable themes
+   */
   theme_enable(
     array(
       'construct',
@@ -17,14 +25,35 @@ function construct_install() {
     )
   );
   
+  /**
+   * Set default theme
+   */
   variable_set('theme_default', 'construct');
   variable_set('admin_theme', 'seven');
   
+  /**
+   * Disable bartik
+   */
   theme_disable(
     array(
       'bartik'
     )
   );
+  
+  /**
+   * Disable user login block
+   */
+  db_delete('block')
+          ->condition('module','user')
+          ->condition('delta','login')
+          ->execute();
+  
+  /**
+   * Default Settings
+   */
+  variable_set('pathauto_node_pattern','[node:title]'); // Pathauto url alias
+  variable_set('pathauto_case','0'); // Pathauto leave case as Node
+  
 }
 
 ?>
