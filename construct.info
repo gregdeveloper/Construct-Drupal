@@ -48,6 +48,7 @@ dependencies[] = flickr
 ;dependencies[] = fontyourface
 ;dependencies[] = fontyourface_ui
 dependencies[] = googleanalytics
+dependencies[] = google_authorship
 dependencies[] = honeypot
 dependencies[] = html5_tools
 dependencies[] = imce
@@ -68,7 +69,9 @@ dependencies[] = module_filter
 dependencies[] = panels
 dependencies[] = pathauto
 dependencies[] = pathologic
+dependencies[] = rich_snippets
 dependencies[] = scanner
+dependencies[] = schemaorg ;required by rich_snippets
 dependencies[] = single_image
 dependencies[] = socialmedia
 dependencies[] = token
@@ -77,6 +80,10 @@ dependencies[] = views
 dependencies[] = views_slideshow
 dependencies[] = views_ui
 dependencies[] = webform
+dependencies[] = weight
+dependencies[] = xmlsitemap
+dependencies[] = xmlsitemap_menu
+dependencies[] = xmlsitemap_node
 
 ; Construct Features
 
