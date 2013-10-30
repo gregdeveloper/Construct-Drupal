@@ -65,10 +65,13 @@ function construct_install() {
   variable_set('pathauto_case','0'); // Pathauto leave case as Node
   
   /*
-   * Default "Article" to not be promoted and have comments disabled.
+   * Default "Article" to not be promoted
+   * have comments disabled
+   * and no menu link
    */
   variable_set('node_options_article', array('status'));
   variable_set('comment_article', COMMENT_NODE_HIDDEN);
+  variable_set('menu_options_article', array());
   
 }
 
