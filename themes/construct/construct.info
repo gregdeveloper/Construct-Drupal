@@ -33,6 +33,7 @@ regions[help]           = Help
 regions[slider]         = Slider
 regions[featured]       = Featured
 regions[content]        = Content
+regions[prefooter]      = Prefooter
 regions[footer]         = Footer
 regions[bottom]         = Page bottom
 

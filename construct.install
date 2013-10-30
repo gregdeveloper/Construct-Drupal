@@ -53,6 +53,11 @@ function construct_install() {
           ->condition('delta','navigation')
           ->execute();
   
+  db_delete('block') // Powered by drupal block
+          ->condition('module','system')
+          ->condition('delta','powered-by')
+          ->execute();
+  
   /**
    * Default Settings
    */

@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Construct Images feature.
+ */
+
+include_once 'construct_images.features.inc';

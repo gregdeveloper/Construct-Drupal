@@ -1,0 +1,10 @@
+name = Construct Images
+description = Enables default image styles for other Construct modules
+core = 7.x
+package = Features
+version = 7.x-1.0
+project = construct_images
+dependencies[] = image
+features[features_api][] = api:2
+features[image][] = square__480x480_
+project path = profiles/construct/modules/features
