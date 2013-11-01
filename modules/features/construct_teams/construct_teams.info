@@ -1,4 +1,5 @@
 name = Construct Teams
+description = This feature allows you to create Teams of Members. It has a Teams page, a Teams block and Teams slider
 core = 7.x
 package = Features
 version = 7.x-1.0
@@ -20,6 +21,7 @@ features[field_instance][] = node-team-field_tags
 features[field_instance][] = node-team_member-body
 features[field_instance][] = node-team_member-field_image
 features[field_instance][] = node-team_member-field_tags
+features[field_instance][] = node-team_member-field_team
 features[node][] = team
 features[node][] = team_member
 features[views_view][] = teams
