@@ -39,11 +39,41 @@ function construct_portfolio_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Content: Image */
+  $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
+  $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['label'] = '';
+  $handler->display->display_options['fields']['field_image']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_image']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_image']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_image']['settings'] = array(
+    'image_style' => 'square__480x480_',
+    'image_link' => 'content',
+  );
+  $handler->display->display_options['fields']['field_image']['field_api_classes'] = TRUE;
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Contextual filter: Content: Portfolio Category (field_portfolio_category) */
+  $handler->display->display_options['arguments']['field_portfolio_category_target_id']['id'] = 'field_portfolio_category_target_id';
+  $handler->display->display_options['arguments']['field_portfolio_category_target_id']['table'] = 'field_data_field_portfolio_category';
+  $handler->display->display_options['arguments']['field_portfolio_category_target_id']['field'] = 'field_portfolio_category_target_id';
+  $handler->display->display_options['arguments']['field_portfolio_category_target_id']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_portfolio_category_target_id']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['field_portfolio_category_target_id']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_portfolio_category_target_id']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_portfolio_category_target_id']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['field_portfolio_category_target_id']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['field_portfolio_category_target_id']['validate']['type'] = 'node';
+  $handler->display->display_options['arguments']['field_portfolio_category_target_id']['validate_options']['types'] = array(
+    'portfolio_category' => 'portfolio_category',
+  );
+  $handler->display->display_options['arguments']['field_portfolio_category_target_id']['validate_options']['access'] = TRUE;
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -58,22 +88,6 @@ function construct_portfolio_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'portfolio_project' => 'portfolio_project',
   );
-  /* Filter criterion: Content: Tags (field_tags) */
-  $handler->display->display_options['filters']['field_tags_tid']['id'] = 'field_tags_tid';
-  $handler->display->display_options['filters']['field_tags_tid']['table'] = 'field_data_field_tags';
-  $handler->display->display_options['filters']['field_tags_tid']['field'] = 'field_tags_tid';
-  $handler->display->display_options['filters']['field_tags_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_tags_tid']['expose']['operator_id'] = 'field_tags_tid_op';
-  $handler->display->display_options['filters']['field_tags_tid']['expose']['label'] = 'Tags (field_tags)';
-  $handler->display->display_options['filters']['field_tags_tid']['expose']['operator'] = 'field_tags_tid_op';
-  $handler->display->display_options['filters']['field_tags_tid']['expose']['identifier'] = 'field_tags_tid';
-  $handler->display->display_options['filters']['field_tags_tid']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    3 => 0,
-  );
-  $handler->display->display_options['filters']['field_tags_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_tags_tid']['vocabulary'] = 'tags';
 
   /* Display: Portfolio Page */
   $handler = $view->new_display('page', 'Portfolio Page', 'portfolio_page');
@@ -88,12 +102,17 @@ function construct_portfolio_views_default_views() {
 
   /* Display: Portfolio Block */
   $handler = $view->new_display('block', 'Portfolio Block', 'portfolio_block');
+  $handler->display->display_options['display_description'] = 'Displays the portfolio products as an unformatted list with a portfolio category contextual filter';
+
+  /* Display: Portfolio Carousel */
+  $handler = $view->new_display('block', 'Portfolio Carousel', 'portfolio_carousel');
   $handler->display->display_options['display_description'] = 'Displays projects in a carousel';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '5';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'flexslider';
+  $handler->display->display_options['style_options']['optionset'] = 'carousel';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';

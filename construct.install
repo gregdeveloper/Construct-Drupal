@@ -41,11 +41,21 @@ function construct_install() {
   );
   
   /**
-   * Disable user login block
+   * Disable Blocks
    */
-  db_delete('block')
+  db_delete('block') // User login block
           ->condition('module','user')
           ->condition('delta','login')
+          ->execute();
+
+  db_delete('block') // User navigation block
+          ->condition('module','system')
+          ->condition('delta','navigation')
+          ->execute();
+  
+  db_delete('block') // Powered by drupal block
+          ->condition('module','system')
+          ->condition('delta','powered-by')
           ->execute();
   
   /**
@@ -53,6 +63,29 @@ function construct_install() {
    */
   variable_set('pathauto_node_pattern','[node:title]'); // Pathauto url alias
   variable_set('pathauto_case','0'); // Pathauto leave case as Node
+  
+  /**
+   * Default "Article" to not be promoted
+   * have comments disabled
+   * and no menu link
+   */
+  variable_set('node_options_article', array('status'));
+  variable_set('comment_article', COMMENT_NODE_HIDDEN);
+  variable_set('menu_options_article', array());
+  
+  /**
+   * Install Performance shortcut
+   */
+  $t = get_t();
+  module_load_include('inc', 'shortcut', 'shortcut.admin');
+  $shortcut_set = shortcut_set_load('shortcut-set-1');
+  $shortcut_link = array(
+    'link_path' => 'admin/config/development/performance',
+    'link_title' => $t('Performance'),
+    'menu_name' => $shortcut_set->set_name,
+  );
+  shortcut_admin_add_link($shortcut_link, $shortcut_set, shortcut_max_slots());
+  shortcut_set_save($shortcut_set);
   
 }
 

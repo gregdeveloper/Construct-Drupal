@@ -22,7 +22,7 @@ function construct_services_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Services Page';
+  $handler->display->display_options['title'] = 'Services';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -64,9 +64,28 @@ function construct_services_views_default_views() {
   $handler->display->display_options['path'] = 'services';
 
   /* Display: Services Block */
-  $handler = $view->new_display('block', 'Services Block', 'construct_services_block');
+  $handler = $view->new_display('block', 'Services Block', 'services_block');
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Services Category (field_services_category) */
+  $handler->display->display_options['arguments']['field_services_category_target_id']['id'] = 'field_services_category_target_id';
+  $handler->display->display_options['arguments']['field_services_category_target_id']['table'] = 'field_data_field_services_category';
+  $handler->display->display_options['arguments']['field_services_category_target_id']['field'] = 'field_services_category_target_id';
+  $handler->display->display_options['arguments']['field_services_category_target_id']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_services_category_target_id']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['field_services_category_target_id']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_services_category_target_id']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_services_category_target_id']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['field_services_category_target_id']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['field_services_category_target_id']['validate']['type'] = 'node';
+  $handler->display->display_options['arguments']['field_services_category_target_id']['validate_options']['types'] = array(
+    'services_category' => 'services_category',
+  );
+  $handler->display->display_options['arguments']['field_services_category_target_id']['validate_options']['access'] = TRUE;
+
+  /* Display: Services Carousel */
+  $handler = $view->new_display('block', 'Services Carousel', 'services_carousel');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Services Block';
+  $handler->display->display_options['title'] = 'Services';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
@@ -75,6 +94,22 @@ function construct_services_views_default_views() {
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Services Category (field_services_category) */
+  $handler->display->display_options['arguments']['field_services_category_target_id']['id'] = 'field_services_category_target_id';
+  $handler->display->display_options['arguments']['field_services_category_target_id']['table'] = 'field_data_field_services_category';
+  $handler->display->display_options['arguments']['field_services_category_target_id']['field'] = 'field_services_category_target_id';
+  $handler->display->display_options['arguments']['field_services_category_target_id']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_services_category_target_id']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['field_services_category_target_id']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_services_category_target_id']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_services_category_target_id']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['field_services_category_target_id']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['field_services_category_target_id']['validate']['type'] = 'node';
+  $handler->display->display_options['arguments']['field_services_category_target_id']['validate_options']['types'] = array(
+    'services_category' => 'services_category',
+  );
+  $handler->display->display_options['arguments']['field_services_category_target_id']['validate_options']['access'] = TRUE;
   $export['construct_services'] = $view;
 
   return $export;

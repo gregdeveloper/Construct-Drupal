@@ -71,7 +71,8 @@ dependencies[] = pathauto
 dependencies[] = pathologic
 dependencies[] = rich_snippets
 dependencies[] = scanner
-dependencies[] = schemaorg ;required by rich_snippets
+;schemaorg module required by rich_snippets
+dependencies[] = schemaorg
 dependencies[] = single_image
 dependencies[] = socialmedia
 dependencies[] = token

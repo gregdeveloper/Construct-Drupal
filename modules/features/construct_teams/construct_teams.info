@@ -1,4 +1,5 @@
 name = Construct Teams
+description = This feature allows you to create Teams of Members. It has a Teams page, a Teams block and Teams slider
 core = 7.x
 package = Features
 version = 7.x-1.0

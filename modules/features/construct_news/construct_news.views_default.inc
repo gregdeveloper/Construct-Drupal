@@ -78,6 +78,7 @@ function construct_news_views_default_views() {
 
   /* Display: News Page */
   $handler = $view->new_display('page', 'News Page', 'news_page');
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
   $handler->display->display_options['path'] = 'news';
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'News';
@@ -89,6 +90,26 @@ function construct_news_views_default_views() {
 
   /* Display: News Block */
   $handler = $view->new_display('block', 'News Block', 'news_block');
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: News Category (field_news_category) */
+  $handler->display->display_options['arguments']['field_news_category_target_id']['id'] = 'field_news_category_target_id';
+  $handler->display->display_options['arguments']['field_news_category_target_id']['table'] = 'field_data_field_news_category';
+  $handler->display->display_options['arguments']['field_news_category_target_id']['field'] = 'field_news_category_target_id';
+  $handler->display->display_options['arguments']['field_news_category_target_id']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_news_category_target_id']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['field_news_category_target_id']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_news_category_target_id']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_news_category_target_id']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['field_news_category_target_id']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['field_news_category_target_id']['validate']['type'] = 'node';
+  $handler->display->display_options['arguments']['field_news_category_target_id']['validate_options']['types'] = array(
+    'news_category' => 'news_category',
+  );
+  $handler->display->display_options['arguments']['field_news_category_target_id']['validate_options']['access'] = TRUE;
+  $handler->display->display_options['arguments']['field_news_category_target_id']['validate']['fail'] = 'ignore';
+
+  /* Display: News Carousel */
+  $handler = $view->new_display('block', 'News Carousel', 'news_carousel');
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
