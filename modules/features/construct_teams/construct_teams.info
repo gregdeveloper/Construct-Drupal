@@ -21,7 +21,6 @@ features[field_instance][] = node-team-field_tags
 features[field_instance][] = node-team_member-body
 features[field_instance][] = node-team_member-field_image
 features[field_instance][] = node-team_member-field_tags
-features[field_instance][] = node-team_member-field_team
 features[node][] = team
 features[node][] = team_member
 features[views_view][] = teams

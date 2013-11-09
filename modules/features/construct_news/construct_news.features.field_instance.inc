@@ -111,47 +111,6 @@ function construct_news_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-article-field_news_category'
-  $field_instances['node-article-field_news_category'] = array(
-    'bundle' => 'article',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'links' => 1,
-          'view_mode' => 'teaser',
-        ),
-        'type' => 'entityreference_entity_view',
-        'weight' => 11,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'fences_wrapper' => 'div',
-    'field_name' => 'field_news_category',
-    'label' => 'News Category',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_buttons',
-      'weight' => 41,
-    ),
-  );
-
   // Exported field_instance: 'node-article-field_tags'
   $field_instances['node-article-field_tags'] = array(
     'bundle' => 'article',
@@ -337,7 +296,6 @@ function construct_news_field_default_field_instances() {
   t('Body');
   t('Enter a comma-separated list of words to describe your content.');
   t('Image');
-  t('News Category');
   t('Tags');
   t('Upload an image to go with this article.');
 

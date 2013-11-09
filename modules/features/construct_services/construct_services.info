@@ -17,7 +17,6 @@ features[ctools][] = views:views_default:3.0
 features[features_api][] = api:2
 features[field_instance][] = node-service-body
 features[field_instance][] = node-service-field_image
-features[field_instance][] = node-service-field_services_category
 features[field_instance][] = node-service-field_tags
 features[field_instance][] = node-services_category-body
 features[field_instance][] = node-services_category-field_image

@@ -12,7 +12,7 @@ function construct_maps_views_default_views() {
 
   $view = new view();
   $view->name = 'find_us';
-  $view->description = '';
+  $view->description = 'Contains a page and block which display a location map of users';
   $view->tag = 'default';
   $view->base_table = 'users';
   $view->human_name = 'Find Us';

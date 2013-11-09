@@ -12,7 +12,7 @@ function construct_teams_views_default_views() {
 
   $view = new view();
   $view->name = 'teams';
-  $view->description = '';
+  $view->description = 'Contains a page, block, carousel and slider of Teams and a Team Members block to show on an individual Team\'s members';
   $view->tag = 'default';
   $view->base_table = 'node';
   $view->human_name = 'Teams';

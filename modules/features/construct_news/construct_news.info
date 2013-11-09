@@ -19,7 +19,6 @@ features[ctools][] = views:views_default:3.0
 features[features_api][] = api:2
 features[field_instance][] = node-article-body
 features[field_instance][] = node-article-field_image
-features[field_instance][] = node-article-field_news_category
 features[field_instance][] = node-article-field_tags
 features[field_instance][] = node-news_category-body
 features[field_instance][] = node-news_category-field_image

@@ -12,7 +12,7 @@ function construct_products_views_default_views() {
 
   $view = new view();
   $view->name = 'products';
-  $view->description = '';
+  $view->description = 'Contains a page, block, carousel and slider of Products.  Also contains a Product models block to display on Product pages';
   $view->tag = 'default';
   $view->base_table = 'node';
   $view->human_name = 'Products';
@@ -85,7 +85,7 @@ function construct_products_views_default_views() {
   /* Display: Products Block */
   $handler = $view->new_display('block', 'Products Block', 'products_block');
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Product Category (field_product_category) */
+  /* Contextual filter: Broken/missing handler */
   $handler->display->display_options['arguments']['field_product_category_target_id']['id'] = 'field_product_category_target_id';
   $handler->display->display_options['arguments']['field_product_category_target_id']['table'] = 'field_data_field_product_category';
   $handler->display->display_options['arguments']['field_product_category_target_id']['field'] = 'field_product_category_target_id';
@@ -121,7 +121,7 @@ function construct_products_views_default_views() {
   $handler = $view->new_display('block', 'Product Models', 'product_models');
   $handler->display->display_options['display_description'] = 'Displays current product\'s models in a carousel';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Product (field_product) */
+  /* Contextual filter: Broken/missing handler */
   $handler->display->display_options['arguments']['field_product_target_id']['id'] = 'field_product_target_id';
   $handler->display->display_options['arguments']['field_product_target_id']['table'] = 'field_data_field_product';
   $handler->display->display_options['arguments']['field_product_target_id']['field'] = 'field_product_target_id';
@@ -166,7 +166,7 @@ function construct_products_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Product Category (field_product_category) */
+  /* Contextual filter: Broken/missing handler */
   $handler->display->display_options['arguments']['field_product_category_target_id']['id'] = 'field_product_category_target_id';
   $handler->display->display_options['arguments']['field_product_category_target_id']['table'] = 'field_data_field_product_category';
   $handler->display->display_options['arguments']['field_product_category_target_id']['field'] = 'field_product_category_target_id';

@@ -12,7 +12,7 @@ function construct_news_views_default_views() {
 
   $view = new view();
   $view->name = 'news';
-  $view->description = 'News view uses the default article content type';
+  $view->description = 'Contains a page, block, carousel and slider of Articles';
   $view->tag = 'default';
   $view->base_table = 'node';
   $view->human_name = 'News';
@@ -91,7 +91,7 @@ function construct_news_views_default_views() {
   /* Display: News Block */
   $handler = $view->new_display('block', 'News Block', 'news_block');
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: News Category (field_news_category) */
+  /* Contextual filter: Broken/missing handler */
   $handler->display->display_options['arguments']['field_news_category_target_id']['id'] = 'field_news_category_target_id';
   $handler->display->display_options['arguments']['field_news_category_target_id']['table'] = 'field_data_field_news_category';
   $handler->display->display_options['arguments']['field_news_category_target_id']['field'] = 'field_news_category_target_id';
