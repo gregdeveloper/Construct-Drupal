@@ -42,6 +42,7 @@ dependencies[] = entity
 dependencies[] = entityreference
 dependencies[] = features
 dependencies[] = fences
+dependencies[] = field_collection
 dependencies[] = flexslider
 dependencies[] = flexslider_views_slideshow
 dependencies[] = flickr
