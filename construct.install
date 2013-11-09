@@ -86,15 +86,6 @@ function construct_install() {
   shortcut_admin_add_link($shortcut_link, $shortcut_set, shortcut_max_slots());
   shortcut_set_save($shortcut_set);
   
-  /*
-   * Setup Editor Role with all admin permissions
-   */
-  $editor_role = new stdClass();
-  $editor_role->name = 'editor';
-  $editor_role->weight = 3;
-  user_role_save($editor_role);
-  user_role_grant_permissions($editor_role->rid, array_keys(module_invoke_all('permission')));
-  
 }
 
 ?>
