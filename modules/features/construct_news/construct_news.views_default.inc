@@ -77,7 +77,8 @@ function construct_news_views_default_views() {
   );
 
   /* Display: News Page */
-  $handler = $view->new_display('page', 'News Page', 'news_page');
+  $handler = $view->new_display('page', 'News Page', 'construct_news_page');
+  $handler->display->display_options['display_description'] = 'A page of Article teasers like a blog';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   $handler->display->display_options['path'] = 'news';
   $handler->display->display_options['menu']['type'] = 'normal';
@@ -89,27 +90,13 @@ function construct_news_views_default_views() {
   $handler->display->display_options['menu']['context_only_inline'] = 0;
 
   /* Display: News Block */
-  $handler = $view->new_display('block', 'News Block', 'news_block');
+  $handler = $view->new_display('block', 'News Block', 'construct_news_block');
+  $handler->display->display_options['display_description'] = 'A block of Article teasers';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Broken/missing handler */
-  $handler->display->display_options['arguments']['field_news_category_target_id']['id'] = 'field_news_category_target_id';
-  $handler->display->display_options['arguments']['field_news_category_target_id']['table'] = 'field_data_field_news_category';
-  $handler->display->display_options['arguments']['field_news_category_target_id']['field'] = 'field_news_category_target_id';
-  $handler->display->display_options['arguments']['field_news_category_target_id']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['field_news_category_target_id']['default_argument_type'] = 'node';
-  $handler->display->display_options['arguments']['field_news_category_target_id']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['field_news_category_target_id']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['field_news_category_target_id']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['arguments']['field_news_category_target_id']['specify_validation'] = TRUE;
-  $handler->display->display_options['arguments']['field_news_category_target_id']['validate']['type'] = 'node';
-  $handler->display->display_options['arguments']['field_news_category_target_id']['validate_options']['types'] = array(
-    'news_category' => 'news_category',
-  );
-  $handler->display->display_options['arguments']['field_news_category_target_id']['validate_options']['access'] = TRUE;
-  $handler->display->display_options['arguments']['field_news_category_target_id']['validate']['fail'] = 'ignore';
 
   /* Display: News Carousel */
-  $handler = $view->new_display('block', 'News Carousel', 'news_carousel');
+  $handler = $view->new_display('block', 'News Carousel', 'construct_news_carousel');
+  $handler->display->display_options['display_description'] = 'A carousel of Articles';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
@@ -119,6 +106,18 @@ function construct_news_views_default_views() {
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+
+  /* Display: News Slider */
+  $handler = $view->new_display('block', 'News Slider', 'construct_news_slider');
+  $handler->display->display_options['display_description'] = 'A slider of Articles';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'flexslider';
+  $handler->display->display_options['style_options']['optionset'] = 'slider';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $export['news'] = $view;
 

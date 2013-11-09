@@ -71,13 +71,12 @@ function construct_teams_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'product_category' => 'product_category',
     'team' => 'team',
   );
 
   /* Display: Teams Page */
-  $handler = $view->new_display('page', 'Teams Page', 'teams_page');
-  $handler->display->display_options['display_description'] = 'Displays a list of Teams';
+  $handler = $view->new_display('page', 'Teams Page', 'construct_teams_page');
+  $handler->display->display_options['display_description'] = 'A page of team teasers';
   $handler->display->display_options['path'] = 'teams';
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Teams';
@@ -87,7 +86,8 @@ function construct_teams_views_default_views() {
   $handler->display->display_options['menu']['context_only_inline'] = 0;
 
   /* Display: Team Members */
-  $handler = $view->new_display('block', 'Team Members', 'team_members_block');
+  $handler = $view->new_display('block', 'Team Members', 'construct_team_members_block');
+  $handler->display->display_options['display_description'] = 'A block of team members filtered by current team in url';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
@@ -123,8 +123,8 @@ function construct_teams_views_default_views() {
   );
 
   /* Display: Teams Carousel */
-  $handler = $view->new_display('block', 'Teams Carousel', 'teams_carousel');
-  $handler->display->display_options['display_description'] = 'Displays teams in a carousel';
+  $handler = $view->new_display('block', 'Teams Carousel', 'construct_teams_carousel');
+  $handler->display->display_options['display_description'] = 'A carousel of teams';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '5';
@@ -151,6 +151,18 @@ function construct_teams_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'team' => 'team',
   );
+
+  /* Display: Teams Slider */
+  $handler = $view->new_display('block', 'Teams Slider', 'construct_teams_slider');
+  $handler->display->display_options['display_description'] = 'A slider of teams';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'flexslider';
+  $handler->display->display_options['style_options']['optionset'] = 'slider';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $export['teams'] = $view;
 
   return $export;

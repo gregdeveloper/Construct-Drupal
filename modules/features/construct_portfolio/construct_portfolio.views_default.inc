@@ -75,8 +75,8 @@ function construct_portfolio_views_default_views() {
   );
 
   /* Display: Portfolio Page */
-  $handler = $view->new_display('page', 'Portfolio Page', 'portfolio_page');
-  $handler->display->display_options['display_description'] = 'Displays a list of portfolio project teasers';
+  $handler = $view->new_display('page', 'Portfolio Page', 'construct_portfolio_page');
+  $handler->display->display_options['display_description'] = 'A page of portfolio project teasers';
   $handler->display->display_options['path'] = 'portfolio';
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Portfolio';
@@ -86,12 +86,12 @@ function construct_portfolio_views_default_views() {
   $handler->display->display_options['menu']['context_only_inline'] = 0;
 
   /* Display: Portfolio Block */
-  $handler = $view->new_display('block', 'Portfolio Block', 'portfolio_block');
-  $handler->display->display_options['display_description'] = 'Displays the portfolio products as an unformatted list with a portfolio category contextual filter';
+  $handler = $view->new_display('block', 'Portfolio Block', 'construct_portfolio_block');
+  $handler->display->display_options['display_description'] = 'A block of portfolio project teasers with an optional portfolio category contextual filter';
 
   /* Display: Portfolio Carousel */
-  $handler = $view->new_display('block', 'Portfolio Carousel', 'portfolio_carousel');
-  $handler->display->display_options['display_description'] = 'Displays projects in a carousel';
+  $handler = $view->new_display('block', 'Portfolio Carousel', 'construct_portfolio_carousel');
+  $handler->display->display_options['display_description'] = 'A carousel of Portfolio Projects';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '5';
@@ -101,6 +101,18 @@ function construct_portfolio_views_default_views() {
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+
+  /* Display: Portfolio Slider */
+  $handler = $view->new_display('block', 'Portfolio Slider', 'construct_portfolio_slider');
+  $handler->display->display_options['display_description'] = 'A slider of Portfolio Projects';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'flexslider';
+  $handler->display->display_options['style_options']['optionset'] = 'slider';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $export['portfolio'] = $view;
 

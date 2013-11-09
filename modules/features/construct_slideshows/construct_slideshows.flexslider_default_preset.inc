@@ -14,7 +14,7 @@ function construct_slideshows_flexslider_default_presets() {
   $preset->disabled = FALSE; /* Edit this to true to make a default preset disabled initially */
   $preset->api_version = 1;
   $preset->name = 'carousel';
-  $preset->title = 'carousel';
+  $preset->title = 'Carousel';
   $preset->theme = 'classic';
   $preset->imagestyle_normal = 'flexslider_full';
   $preset->imagestyle_thumbnail = 'flexslider_thumbnail';

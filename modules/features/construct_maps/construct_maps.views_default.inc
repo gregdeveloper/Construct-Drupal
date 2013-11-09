@@ -53,14 +53,16 @@ function construct_maps_views_default_views() {
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
 
   /* Display: Find Us Page */
-  $handler = $view->new_display('page', 'Find Us Page', 'page');
+  $handler = $view->new_display('page', 'Find Us Page', 'construct_find_us_page');
+  $handler->display->display_options['display_description'] = 'A page with a google map of users';
   $handler->display->display_options['path'] = 'find-us';
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Find Us';
   $handler->display->display_options['menu']['name'] = 'main-menu';
 
   /* Display: Find Us Block */
-  $handler = $view->new_display('block', 'Find Us Block', 'block');
+  $handler = $view->new_display('block', 'Find Us Block', 'construct_find_us_block');
+  $handler->display->display_options['display_description'] = 'A block with a google map of users';
   $export['find_us'] = $view;
 
   return $export;

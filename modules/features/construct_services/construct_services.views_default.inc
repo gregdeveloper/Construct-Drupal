@@ -76,16 +76,19 @@ function construct_services_views_default_views() {
 
   /* Display: Services Page */
   $handler = $view->new_display('page', 'Services Page', 'construct_services_page');
+  $handler->display->display_options['display_description'] = 'A page of service teasers';
   $handler->display->display_options['path'] = 'services';
 
   /* Display: Services Block */
-  $handler = $view->new_display('block', 'Services Block', 'services_block');
+  $handler = $view->new_display('block', 'Services Block', 'construct_services_block');
+  $handler->display->display_options['display_description'] = 'A block of service teasers';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
 
   /* Display: Services Carousel */
-  $handler = $view->new_display('block', 'Services Carousel', 'services_carousel');
+  $handler = $view->new_display('block', 'Services Carousel', 'construct_services_carousel');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Services';
+  $handler->display->display_options['display_description'] = 'A carousel of services';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
@@ -96,6 +99,18 @@ function construct_services_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
+
+  /* Display: Services Slider */
+  $handler = $view->new_display('block', 'Services Slider', 'construct_services_slider');
+  $handler->display->display_options['display_description'] = 'A slider of services';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'flexslider';
+  $handler->display->display_options['style_options']['optionset'] = 'slider';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $export['construct_services'] = $view;
 
   return $export;
