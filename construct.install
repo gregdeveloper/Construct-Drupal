@@ -99,7 +99,8 @@ function construct_install() {
   /*
    * Set Front page to /home
    */
-  variable_set('site_frontpage', '/home');
+  variable_set('site_frontpage', 'home');
+  variable_set('weight_frontpage', '0');
   
 }
 
