@@ -21,6 +21,7 @@ features[field_instance][] = node-page-field_background
 features[field_instance][] = node-slide-body
 features[field_instance][] = node-slide-field_image
 features[flexslider_optionset][] = carousel
+features[flexslider_optionset][] = slider
 features[image][] = background__1400xauto_
 features[node][] = slide
 features_exclude[field_base][body] = body
