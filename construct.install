@@ -86,6 +86,21 @@ function construct_install() {
   shortcut_admin_add_link($shortcut_link, $shortcut_set, shortcut_max_slots());
   shortcut_set_save($shortcut_set);
   
+  /*
+   * Create Home node (https://drupal.org/node/1388922)
+   */
+  $node = new stdClass();
+  $node->title = 'Home';
+  $node->type = 'page';
+  node_object_prepare($node); // Sets some defaults. Invokes hook_prepare() and hook_node_prepare().
+  $node = node_submit($node); // Prepare node for saving
+  node_save($node);
+  
+  /*
+   * Set Front page to /home
+   */
+  variable_set('site_frontpage', '/Home.html');
+  
 }
 
 ?>
