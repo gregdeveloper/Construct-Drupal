@@ -61,7 +61,7 @@ function construct_install() {
    * Default Settings
    */
   variable_set('pathauto_node_pattern','[node:title]'); // Pathauto url alias
-  variable_set('pathauto_case','0'); // Pathauto leave case as Node
+  //variable_set('pathauto_case','0'); // Pathauto leave capital case as Node
   
   /**
    * Default "Article" to not be promoted
@@ -99,7 +99,7 @@ function construct_install() {
   /*
    * Set Front page to /home
    */
-  variable_set('site_frontpage', '/Home.html');
+  variable_set('site_frontpage', '/home');
   
 }
 
