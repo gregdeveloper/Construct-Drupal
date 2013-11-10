@@ -82,13 +82,13 @@ function construct_products_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_product_category'
-  $field_bases['field_product_category'] = array(
+  // Exported field_base: 'field_construct_product_category'
+  $field_bases['field_construct_product_category'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_product_category',
+    'field_name' => 'field_construct_product_category',
     'foreign keys' => array(
       'node' => array(
         'columns' => array(
@@ -116,7 +116,7 @@ function construct_products_field_default_field_bases() {
           'type' => 'none',
         ),
         'target_bundles' => array(
-          'product_category' => 'product_category',
+          'construct_product_category' => 'construct_product_category',
         ),
       ),
       'target_type' => 'node',

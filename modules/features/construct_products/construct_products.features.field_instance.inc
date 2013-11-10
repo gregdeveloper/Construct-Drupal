@@ -154,9 +154,9 @@ function construct_products_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-product_category-body'
-  $field_instances['node-product_category-body'] = array(
-    'bundle' => 'product_category',
+  // Exported field_instance: 'node-construct_product_category-body'
+  $field_instances['node-construct_product_category-body'] = array(
+    'bundle' => 'construct_product_category',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -202,9 +202,9 @@ function construct_products_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-product_category-field_image'
-  $field_instances['node-product_category-field_image'] = array(
-    'bundle' => 'product_category',
+  // Exported field_instance: 'node-construct_product_category-field_image'
+  $field_instances['node-construct_product_category-field_image'] = array(
+    'bundle' => 'construct_product_category',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -253,9 +253,9 @@ function construct_products_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-product_category-field_tags'
-  $field_instances['node-product_category-field_tags'] = array(
-    'bundle' => 'product_category',
+  // Exported field_instance: 'node-construct_product_category-field_tags'
+  $field_instances['node-construct_product_category-field_tags'] = array(
+    'bundle' => 'construct_product_category',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -294,9 +294,9 @@ function construct_products_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-product_model-body'
-  $field_instances['node-product_model-body'] = array(
-    'bundle' => 'product_model',
+  // Exported field_instance: 'node-construct_product_model-body'
+  $field_instances['node-construct_product_model-body'] = array(
+    'bundle' => 'construct_product_model',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -342,9 +342,9 @@ function construct_products_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-product_model-field_image'
-  $field_instances['node-product_model-field_image'] = array(
-    'bundle' => 'product_model',
+  // Exported field_instance: 'node-construct_product_model-field_image'
+  $field_instances['node-construct_product_model-field_image'] = array(
+    'bundle' => 'construct_product_model',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -393,9 +393,9 @@ function construct_products_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-product_model-field_tags'
-  $field_instances['node-product_model-field_tags'] = array(
-    'bundle' => 'product_model',
+  // Exported field_instance: 'node-construct_product_model-field_tags'
+  $field_instances['node-construct_product_model-field_tags'] = array(
+    'bundle' => 'construct_product_model',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',

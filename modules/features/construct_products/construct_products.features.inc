@@ -24,7 +24,7 @@ function construct_products_node_info() {
       'title_label' => t('Title'),
       'help' => '',
     ),
-    'product_category' => array(
+    'construct_product_category' => array(
       'name' => t('Product Category'),
       'base' => 'node_content',
       'description' => '',
@@ -32,7 +32,7 @@ function construct_products_node_info() {
       'title_label' => t('Title'),
       'help' => '',
     ),
-    'product_model' => array(
+    'construct_product_model' => array(
       'name' => t('Product Model'),
       'base' => 'node_content',
       'description' => '',

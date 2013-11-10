@@ -71,7 +71,7 @@ function construct_products_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'product_category' => 'product_category',
+    'construct_product_category' => 'construct_product_category',
   );
 
   /* Display: Products Page */
@@ -100,7 +100,7 @@ function construct_products_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'product' => 'product',
+    'construct_product' => 'construct_product',
   );
 
   /* Display: Product Models */
@@ -177,7 +177,7 @@ function construct_products_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'product' => 'product',
+    'construct_product' => 'construct_product',
   );
 
   /* Display: Products Slider */
@@ -229,7 +229,7 @@ function construct_products_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'product' => 'product',
+    'construct_product' => 'construct_product',
   );
   $export['products'] = $view;
 
