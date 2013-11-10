@@ -25,7 +25,7 @@ function construct_slideshows_views_api($module = NULL, $api = NULL) {
  */
 function construct_slideshows_node_info() {
   $items = array(
-    'slide' => array(
+    'construct_slide' => array(
       'name' => t('Slide'),
       'base' => 'node_content',
       'description' => t('A slide for a slideshow'),

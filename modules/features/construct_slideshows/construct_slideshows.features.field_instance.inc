@@ -10,9 +10,9 @@
 function construct_slideshows_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-slide-body'
-  $field_instances['node-slide-body'] = array(
-    'bundle' => 'slide',
+  // Exported field_instance: 'node-construct_slide-body'
+  $field_instances['node-construct_slide-body'] = array(
+    'bundle' => 'construct_slide',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -58,9 +58,9 @@ function construct_slideshows_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-slide-field_image'
-  $field_instances['node-slide-field_image'] = array(
-    'bundle' => 'slide',
+  // Exported field_instance: 'node-construct_slide-field_image'
+  $field_instances['node-construct_slide-field_image'] = array(
+    'bundle' => 'construct_slide',
     'deleted' => 0,
     'description' => '',
     'display' => array(
