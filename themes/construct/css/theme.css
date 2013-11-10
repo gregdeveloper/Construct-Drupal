@@ -49,8 +49,35 @@ h5{
   box-shadow: none;
 }
 .flexslider .slides > li {
-  margin-right:20px;
+  margin-right: 20px;
 }
 .flexslider .flex-direction-nav {
-  line-height:normal;
+  line-height: normal;
+}
+#slider .flexslider ul.slides li h3{
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  color: rgb(255,255,255);
+  font-size: 2em;
+}
+#slider .flexslider ul.slides li a{
+  position: absolute;
+  bottom: 10%;
+  left: 10%;
+  background: #22374a;
+  padding: 15px 25px;
+  color: rgb(255,255,255);
+  text-decoration: none;
+  -webkit-border-radius: 6px; /* Android ≤ 1.6, iOS 1-3.2, Safari 3-4 */
+          border-radius: 6px;
+}
+
+#footer{
+  background: rgb(21,45,60);
+}
+#footer p,
+#footer a {
+  color: rgb(255,255,255);
+  text-transform: uppercase;
 }

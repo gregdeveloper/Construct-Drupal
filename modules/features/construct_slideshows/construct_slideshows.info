@@ -17,7 +17,6 @@ dependencies[] = views
 features[ctools][] = flexslider:flexslider_default_preset:1
 features[ctools][] = views:views_default:3.0
 features[features_api][] = api:2
-features[field_instance][] = node-page-field_background
 features[field_instance][] = node-slide-body
 features[field_instance][] = node-slide-field_image
 features[flexslider_optionset][] = carousel

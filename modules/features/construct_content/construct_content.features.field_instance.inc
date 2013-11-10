@@ -17,14 +17,14 @@ function construct_content_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
           'image_link' => '',
-          'image_style' => '',
+          'image_style' => 'large',
         ),
         'type' => 'image',
-        'weight' => 0,
+        'weight' => 1,
       ),
     ),
     'entity_type' => 'field_collection_item',
@@ -51,7 +51,7 @@ function construct_content_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 0,
+      'weight' => 1,
     ),
   );
 
@@ -63,7 +63,7 @@ function construct_content_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(
           'edit' => array(
@@ -71,7 +71,7 @@ function construct_content_field_default_field_instances() {
           ),
         ),
         'type' => 'text_default',
-        'weight' => 1,
+        'weight' => 2,
       ),
     ),
     'entity_type' => 'field_collection_item',
@@ -80,7 +80,7 @@ function construct_content_field_default_field_instances() {
     'label' => 'Text',
     'required' => 0,
     'settings' => array(
-      'text_processing' => 0,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -102,7 +102,7 @@ function construct_content_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(
           'edit' => array(
@@ -110,7 +110,7 @@ function construct_content_field_default_field_instances() {
           ),
         ),
         'type' => 'text_default',
-        'weight' => 2,
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'field_collection_item',
@@ -129,7 +129,7 @@ function construct_content_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 1,
+      'weight' => 0,
     ),
   );
 
@@ -254,7 +254,7 @@ function construct_content_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 2,
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
@@ -270,7 +270,7 @@ function construct_content_field_default_field_instances() {
       'module' => 'field_collection',
       'settings' => array(),
       'type' => 'field_collection_embed',
-      'weight' => 3,
+      'weight' => 41,
     ),
   );
 

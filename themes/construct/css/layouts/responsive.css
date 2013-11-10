@@ -43,7 +43,8 @@
 .section,
 #header,
 #main,
-#footer{
+#footer,
+.field-name-field-text-and-image{
   *position: relative;
   *zoom: 1;
 }
@@ -54,14 +55,17 @@
 #main:before,
 #main:after,
 #footer:before,
-#footer:after {
+#footer:after,
+.field-name-field-text-and-image:before,
+.field-name-field-text-and-image:after {
   content: "";
   display: table;
 }
 .section:after,
 #header:after,
 #main:after,
-#footer:after {
+#footer:after,
+.field-name-field-text-and-image:after {
   clear: both;
 }
 
@@ -71,6 +75,47 @@
   width: 100%;
   max-width: none;
   min-height: 300px; /* Shows content background slideshow if no slider */
+}
+
+/* Content */
+
+.field-name-field-text-and-image h3{
+  width: 100%;
+  text-align: center;
+}
+.field-name-field-text-and-image .field-type-image,
+.field-name-field-text-and-image .field-type-text-long{
+  float: left;
+  width: 48%;
+  margin: 1%;
+}
+.field-name-field-text-and-image .field-type-image img{
+  width: 100%;
+  height: auto;
+}
+
+/* Footer */
+
+#footer ul,
+#footer p {
+  width: 48%;
+  margin: 1%;
+  float: left;
+}
+#footer ul{
+  list-style:none;
+  padding: 0;
+}
+#footer ul li,
+#footer ul li a{
+  float:left;
+  display:block;
+}
+#footer ul li a{
+  text-decoration:none;
+}
+#footer p{
+  text-align: right;
 }
 
 /* Navigation bar */
