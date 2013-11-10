@@ -12,7 +12,7 @@ function construct_products_views_default_views() {
 
   $view = new view();
   $view->name = 'products';
-  $view->description = '';
+  $view->description = 'Contains a page, block, carousel and slider of Products.  Also contains a Product models block to display on Product pages';
   $view->tag = 'default';
   $view->base_table = 'node';
   $view->human_name = 'Products';
@@ -39,7 +39,7 @@ function construct_products_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Content: Image */
+  /* Field: Field: Image */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
   $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
@@ -75,31 +75,17 @@ function construct_products_views_default_views() {
   );
 
   /* Display: Products Page */
-  $handler = $view->new_display('page', 'Products Page', 'products_page');
-  $handler->display->display_options['display_description'] = 'Displays a list of product category teasers';
+  $handler = $view->new_display('page', 'Products Page', 'construct_products_page');
+  $handler->display->display_options['display_description'] = 'Displays a list of Product Category teasers';
   $handler->display->display_options['path'] = 'products';
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Products';
   $handler->display->display_options['menu']['name'] = 'main-menu';
 
   /* Display: Products Block */
-  $handler = $view->new_display('block', 'Products Block', 'products_block');
+  $handler = $view->new_display('block', 'Products Block', 'construct_products_block');
+  $handler->display->display_options['display_description'] = 'A block of Product teasers with an optional Product category contextual filter';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Product Category (field_product_category) */
-  $handler->display->display_options['arguments']['field_product_category_target_id']['id'] = 'field_product_category_target_id';
-  $handler->display->display_options['arguments']['field_product_category_target_id']['table'] = 'field_data_field_product_category';
-  $handler->display->display_options['arguments']['field_product_category_target_id']['field'] = 'field_product_category_target_id';
-  $handler->display->display_options['arguments']['field_product_category_target_id']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['field_product_category_target_id']['default_argument_type'] = 'node';
-  $handler->display->display_options['arguments']['field_product_category_target_id']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['field_product_category_target_id']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['field_product_category_target_id']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['arguments']['field_product_category_target_id']['specify_validation'] = TRUE;
-  $handler->display->display_options['arguments']['field_product_category_target_id']['validate']['type'] = 'node';
-  $handler->display->display_options['arguments']['field_product_category_target_id']['validate_options']['types'] = array(
-    'product_category' => 'product_category',
-  );
-  $handler->display->display_options['arguments']['field_product_category_target_id']['validate_options']['access'] = TRUE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -118,23 +104,11 @@ function construct_products_views_default_views() {
   );
 
   /* Display: Product Models */
-  $handler = $view->new_display('block', 'Product Models', 'product_models');
-  $handler->display->display_options['display_description'] = 'Displays current product\'s models in a carousel';
+  $handler = $view->new_display('block', 'Product Models', 'construct_product_models');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Product Models';
+  $handler->display->display_options['display_description'] = 'Carousel of product models filtered by the current product';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Product (field_product) */
-  $handler->display->display_options['arguments']['field_product_target_id']['id'] = 'field_product_target_id';
-  $handler->display->display_options['arguments']['field_product_target_id']['table'] = 'field_data_field_product';
-  $handler->display->display_options['arguments']['field_product_target_id']['field'] = 'field_product_target_id';
-  $handler->display->display_options['arguments']['field_product_target_id']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['field_product_target_id']['default_argument_type'] = 'node';
-  $handler->display->display_options['arguments']['field_product_target_id']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['field_product_target_id']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['field_product_target_id']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['arguments']['field_product_target_id']['specify_validation'] = TRUE;
-  $handler->display->display_options['arguments']['field_product_target_id']['validate']['type'] = 'node';
-  $handler->display->display_options['arguments']['field_product_target_id']['validate_options']['types'] = array(
-    'product_category' => 'product_category',
-  );
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -153,8 +127,8 @@ function construct_products_views_default_views() {
   );
 
   /* Display: Products Carousel */
-  $handler = $view->new_display('block', 'Products Carousel', 'products_carousel');
-  $handler->display->display_options['display_description'] = 'Displays products in a carousel';
+  $handler = $view->new_display('block', 'Products Carousel', 'construct_products_carousel');
+  $handler->display->display_options['display_description'] = 'A carousel of Products';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '5';
@@ -165,22 +139,82 @@ function construct_products_views_default_views() {
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
-  $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Product Category (field_product_category) */
-  $handler->display->display_options['arguments']['field_product_category_target_id']['id'] = 'field_product_category_target_id';
-  $handler->display->display_options['arguments']['field_product_category_target_id']['table'] = 'field_data_field_product_category';
-  $handler->display->display_options['arguments']['field_product_category_target_id']['field'] = 'field_product_category_target_id';
-  $handler->display->display_options['arguments']['field_product_category_target_id']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['field_product_category_target_id']['default_argument_type'] = 'node';
-  $handler->display->display_options['arguments']['field_product_category_target_id']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['field_product_category_target_id']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['field_product_category_target_id']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['arguments']['field_product_category_target_id']['specify_validation'] = TRUE;
-  $handler->display->display_options['arguments']['field_product_category_target_id']['validate']['type'] = 'node';
-  $handler->display->display_options['arguments']['field_product_category_target_id']['validate_options']['types'] = array(
-    'product_category' => 'product_category',
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Field: Image */
+  $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
+  $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['label'] = '';
+  $handler->display->display_options['fields']['field_image']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_image']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_image']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_image']['settings'] = array(
+    'image_style' => 'square__480x480_',
+    'image_link' => 'content',
   );
-  $handler->display->display_options['arguments']['field_product_category_target_id']['validate_options']['access'] = TRUE;
+  $handler->display->display_options['fields']['field_image']['field_api_classes'] = TRUE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'product' => 'product',
+  );
+
+  /* Display: Products Slider */
+  $handler = $view->new_display('block', 'Products Slider', 'construct_products_slider');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['display_description'] = 'A slider of Products';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'flexslider';
+  $handler->display->display_options['style_options']['optionset'] = 'slider';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Field: Image */
+  $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
+  $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['label'] = '';
+  $handler->display->display_options['fields']['field_image']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_image']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_image']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_image']['settings'] = array(
+    'image_style' => 'banner__1400x500_',
+    'image_link' => 'content',
+  );
+  $handler->display->display_options['fields']['field_image']['field_api_classes'] = TRUE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */

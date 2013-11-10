@@ -290,52 +290,11 @@ function construct_teams_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-team_member-field_team'
-  $field_instances['node-team_member-field_team'] = array(
-    'bundle' => 'team_member',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
-        'weight' => 3,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'fences_wrapper' => 'div',
-    'field_name' => 'field_team',
-    'label' => 'Team',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_buttons',
-      'weight' => 45,
-    ),
-  );
-
   // Translatables
   // Included for use with string extractors like potx.
   t('Body');
   t('Image');
   t('Tags');
-  t('Team');
 
   return $field_instances;
 }

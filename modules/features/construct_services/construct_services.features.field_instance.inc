@@ -26,7 +26,7 @@ function construct_services_field_default_field_instances() {
           ),
         ),
         'type' => 'text_default',
-        'weight' => 0,
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -54,7 +54,7 @@ function construct_services_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 31,
+      'weight' => 4,
     ),
   );
 
@@ -65,14 +65,14 @@ function construct_services_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
           'image_link' => '',
           'image_style' => '',
         ),
         'type' => 'image',
-        'weight' => 1,
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -105,25 +105,27 @@ function construct_services_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 33,
+      'weight' => 5,
     ),
   );
 
-  // Exported field_instance: 'node-service-field_services_category'
-  $field_instances['node-service-field_services_category'] = array(
+  // Exported field_instance: 'node-service-field_subtitle'
+  $field_instances['node-service-field_subtitle'] = array(
     'bundle' => 'service',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
-        'module' => 'entityreference',
+        'label' => 'hidden',
+        'module' => 'text',
         'settings' => array(
-          'link' => FALSE,
+          'edit' => array(
+            'editor' => 'direct',
+          ),
         ),
-        'type' => 'entityreference_label',
-        'weight' => 3,
+        'type' => 'text_default',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -133,19 +135,22 @@ function construct_services_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'fences_wrapper' => 'div',
-    'field_name' => 'field_services_category',
-    'label' => 'Services Category',
+    'fences_wrapper' => 'h4',
+    'field_name' => 'field_subtitle',
+    'label' => 'Subtitle',
     'required' => 0,
     'settings' => array(
+      'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_buttons',
-      'weight' => 41,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 1,
     ),
   );
 
@@ -157,11 +162,11 @@ function construct_services_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 2,
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -186,7 +191,7 @@ function construct_services_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 35,
+      'weight' => 6,
     ),
   );
 
@@ -334,7 +339,7 @@ function construct_services_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Body');
   t('Image');
-  t('Services Category');
+  t('Subtitle');
   t('Tags');
 
   return $field_instances;

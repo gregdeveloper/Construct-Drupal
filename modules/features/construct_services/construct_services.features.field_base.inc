@@ -10,34 +10,33 @@
 function construct_services_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_image'
-  $field_bases['field_image'] = array(
+  // Exported field_base: 'field_subtitle'
+  $field_bases['field_subtitle'] = array(
     'active' => 1,
-    'cardinality' => -1,
+    'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_image',
+    'field_name' => 'field_subtitle',
     'foreign keys' => array(
-      'fid' => array(
+      'format' => array(
         'columns' => array(
-          'fid' => 'fid',
+          'format' => 'format',
         ),
-        'table' => 'file_managed',
+        'table' => 'filter_format',
       ),
     ),
     'indexes' => array(
-      'fid' => array(
-        0 => 'fid',
+      'format' => array(
+        0 => 'format',
       ),
     ),
     'locked' => 0,
-    'module' => 'image',
+    'module' => 'text',
     'settings' => array(
-      'default_image' => 0,
-      'uri_scheme' => 'public',
+      'max_length' => 255,
     ),
     'translatable' => 0,
-    'type' => 'image',
+    'type' => 'text',
   );
 
   return $field_bases;

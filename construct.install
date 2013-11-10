@@ -13,7 +13,6 @@ function construct_install() {
   include_once DRUPAL_ROOT . '/profiles/standard/standard.install';
   standard_install();
   
-  
   /**
    * Enable themes
    */
@@ -58,11 +57,58 @@ function construct_install() {
           ->condition('delta','powered-by')
           ->execute();
   
+  db_delete('block') // Search Form block
+          ->condition('module','search')
+          ->condition('delta','form')
+          ->execute();
+  
+  /*
+   * Enable Blocks
+   */
+  $default_theme = variable_get('theme_default');
+  $blocks = array(
+    array(
+      'module' => 'views',
+      'delta' => 'news-construct_services_slider',
+      'theme' => $default_theme,
+      'status' => 1,
+      'weight' => 0,
+      'region' => 'slider',
+      'pages' => '<front>',
+      'cache' => -1,
+    ),
+    array(
+      'module' => 'views',
+      'delta' => 'news-construct_news_carousel',
+      'theme' => $default_theme,
+      'status' => 1,
+      'weight' => 0,
+      'region' => 'featured',
+      'pages' => '<front>',
+      'cache' => -1,
+    ),
+    array(
+      'module' => 'views',
+      'delta' => 'find_us-construct_find_us_block',
+      'theme' => $default_theme,
+      'status' => 1,
+      'weight' => 0,
+      'region' => 'prefooter',
+      'pages' => '',
+      'cache' => -1,
+    )
+  );
+  $query = db_insert('block')->fields(array('module', 'delta', 'theme', 'status', 'weight', 'region', 'pages', 'cache'));
+  foreach ($blocks as $block) {
+    $query->values($block);
+  }
+  $query->execute();
+  
   /**
    * Default Settings
    */
   variable_set('pathauto_node_pattern','[node:title]'); // Pathauto url alias
-  variable_set('pathauto_case','0'); // Pathauto leave case as Node
+  //variable_set('pathauto_case','0'); // Pathauto leave capital case as Node
   
   /**
    * Default "Article" to not be promoted
@@ -86,6 +132,37 @@ function construct_install() {
   );
   shortcut_admin_add_link($shortcut_link, $shortcut_set, shortcut_max_slots());
   shortcut_set_save($shortcut_set);
+  
+  /*
+   * Create Home node (https://drupal.org/node/1388922)
+   */
+  /* THIS SHOULD NOW BE DONE BY CONSTRUCT CONTENT FEATURE
+  $node = new stdClass();
+  $node->title = 'Home';
+  $node->type = 'construct_page';
+  node_object_prepare($node); // Sets some defaults. Invokes hook_prepare() and hook_node_prepare().
+  $node = node_submit($node); // Prepare node for saving
+  node_save($node);
+   */
+  
+  /*
+   * Set Front page to /home
+   */
+  variable_set('site_frontpage', 'home');
+  variable_set('weight_frontpage', '0');
+  
+  /*
+   * Add Contact Us to the main menu
+   */
+  // Create a Home link in the main menu.
+  $item = array(
+    'link_title' => st('Contact Us'),
+    'link_path' => 'contact',
+    'menu_name' => 'main-menu',
+  );
+  menu_link_save($item);
+  // Update the menu router information.
+  menu_rebuild();
   
 }
 

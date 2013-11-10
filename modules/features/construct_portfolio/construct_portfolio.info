@@ -21,7 +21,6 @@ features[field_instance][] = node-portfolio_category-field_image
 features[field_instance][] = node-portfolio_category-field_tags
 features[field_instance][] = node-portfolio_project-body
 features[field_instance][] = node-portfolio_project-field_image
-features[field_instance][] = node-portfolio_project-field_portfolio_category
 features[field_instance][] = node-portfolio_project-field_tags
 features[node][] = portfolio_category
 features[node][] = portfolio_project

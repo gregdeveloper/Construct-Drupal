@@ -42,6 +42,7 @@ dependencies[] = entity
 dependencies[] = entityreference
 dependencies[] = features
 dependencies[] = fences
+dependencies[] = field_collection
 dependencies[] = flexslider
 dependencies[] = flexslider_views_slideshow
 dependencies[] = flickr
@@ -66,6 +67,9 @@ dependencies[] = metatag_panels
 dependencies[] = metatag_twitter_cards
 dependencies[] = metatag_views
 dependencies[] = module_filter
+dependencies[] = node_export
+dependencies[] = node_export_features
+dependencies[] = nodeblock
 dependencies[] = panels
 dependencies[] = pathauto
 dependencies[] = pathologic
@@ -77,6 +81,8 @@ dependencies[] = single_image
 dependencies[] = socialmedia
 dependencies[] = token
 dependencies[] = token_filter
+;uuid required by node_export
+dependencies[] = uuid
 dependencies[] = views
 dependencies[] = views_slideshow
 dependencies[] = views_ui
@@ -87,7 +93,13 @@ dependencies[] = xmlsitemap_menu
 dependencies[] = xmlsitemap_node
 
 ; Construct Features
-
+dependencies[] = construct_content
+dependencies[] = construct_images
+dependencies[] = construct_maps
+dependencies[] = construct_news
+dependencies[] = construct_roles
+dependencies[] = construct_services
+dependencies[] = construct_slideshows
 
 ; System Requirements.
 ; php_memory_limit = 128M

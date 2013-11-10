@@ -6,5 +6,7 @@ version = 7.x-1.0
 project = construct_images
 dependencies[] = image
 features[features_api][] = api:2
+features[image][] = background__1400xauto_
+features[image][] = banner__1400x500_
 features[image][] = square__480x480_
 project path = profiles/construct/modules/features

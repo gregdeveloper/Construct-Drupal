@@ -12,7 +12,7 @@ function construct_news_views_default_views() {
 
   $view = new view();
   $view->name = 'news';
-  $view->description = 'News view uses the default article content type';
+  $view->description = 'Contains a page, block, carousel and slider of Articles';
   $view->tag = 'default';
   $view->base_table = 'node';
   $view->human_name = 'News';
@@ -39,7 +39,7 @@ function construct_news_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Content: Image */
+  /* Field: Field: Image */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
   $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
@@ -77,39 +77,26 @@ function construct_news_views_default_views() {
   );
 
   /* Display: News Page */
-  $handler = $view->new_display('page', 'News Page', 'news_page');
+  $handler = $view->new_display('page', 'News Page', 'construct_news_page');
+  $handler->display->display_options['display_description'] = 'A page of Article teasers like a blog';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   $handler->display->display_options['path'] = 'news';
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'News';
   $handler->display->display_options['menu']['description'] = 'Latest News';
-  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['weight'] = '1';
   $handler->display->display_options['menu']['name'] = 'main-menu';
   $handler->display->display_options['menu']['context'] = 0;
   $handler->display->display_options['menu']['context_only_inline'] = 0;
 
   /* Display: News Block */
-  $handler = $view->new_display('block', 'News Block', 'news_block');
+  $handler = $view->new_display('block', 'News Block', 'construct_news_block');
+  $handler->display->display_options['display_description'] = 'A block of Article teasers';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: News Category (field_news_category) */
-  $handler->display->display_options['arguments']['field_news_category_target_id']['id'] = 'field_news_category_target_id';
-  $handler->display->display_options['arguments']['field_news_category_target_id']['table'] = 'field_data_field_news_category';
-  $handler->display->display_options['arguments']['field_news_category_target_id']['field'] = 'field_news_category_target_id';
-  $handler->display->display_options['arguments']['field_news_category_target_id']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['field_news_category_target_id']['default_argument_type'] = 'node';
-  $handler->display->display_options['arguments']['field_news_category_target_id']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['field_news_category_target_id']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['field_news_category_target_id']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['arguments']['field_news_category_target_id']['specify_validation'] = TRUE;
-  $handler->display->display_options['arguments']['field_news_category_target_id']['validate']['type'] = 'node';
-  $handler->display->display_options['arguments']['field_news_category_target_id']['validate_options']['types'] = array(
-    'news_category' => 'news_category',
-  );
-  $handler->display->display_options['arguments']['field_news_category_target_id']['validate_options']['access'] = TRUE;
-  $handler->display->display_options['arguments']['field_news_category_target_id']['validate']['fail'] = 'ignore';
 
   /* Display: News Carousel */
-  $handler = $view->new_display('block', 'News Carousel', 'news_carousel');
+  $handler = $view->new_display('block', 'News Carousel', 'construct_news_carousel');
+  $handler->display->display_options['display_description'] = 'A carousel of Articles';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
@@ -120,6 +107,69 @@ function construct_news_views_default_views() {
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Field: Image */
+  $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
+  $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['label'] = '';
+  $handler->display->display_options['fields']['field_image']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_image']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_image']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_image']['settings'] = array(
+    'image_style' => 'square__480x480_',
+    'image_link' => 'content',
+  );
+  $handler->display->display_options['fields']['field_image']['delta_limit'] = '1';
+  $handler->display->display_options['fields']['field_image']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_image']['field_api_classes'] = TRUE;
+
+  /* Display: News Slider */
+  $handler = $view->new_display('block', 'News Slider', 'construct_news_slider');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['display_description'] = 'A slider of Articles';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'flexslider';
+  $handler->display->display_options['style_options']['optionset'] = 'slider';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Field: Image */
+  $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
+  $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['label'] = '';
+  $handler->display->display_options['fields']['field_image']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_image']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_image']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_image']['settings'] = array(
+    'image_style' => 'banner__1400x500_',
+    'image_link' => 'content',
+  );
+  $handler->display->display_options['fields']['field_image']['delta_limit'] = '1';
+  $handler->display->display_options['fields']['field_image']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_image']['field_api_classes'] = TRUE;
   $export['news'] = $view;
 
   return $export;
