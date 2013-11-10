@@ -173,7 +173,7 @@ function construct_services_views_default_views() {
   $handler->display->display_options['fields']['view_node']['label'] = '';
   $handler->display->display_options['fields']['view_node']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['view_node']['text'] = 'Click here to find out more';
-  $export['construct_services'] = $view;
+  $export['services'] = $view;
 
   return $export;
 }
