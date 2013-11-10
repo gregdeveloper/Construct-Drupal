@@ -16,7 +16,7 @@ function construct_portfolio_views_api($module = NULL, $api = NULL) {
  */
 function construct_portfolio_node_info() {
   $items = array(
-    'portfolio_category' => array(
+    'construct_portfolio_category' => array(
       'name' => t('Portfolio Category'),
       'base' => 'node_content',
       'description' => '',
@@ -24,7 +24,7 @@ function construct_portfolio_node_info() {
       'title_label' => t('Title'),
       'help' => '',
     ),
-    'portfolio_project' => array(
+    'construct_portfolio_project' => array(
       'name' => t('Portfolio Project'),
       'base' => 'node_content',
       'description' => '',

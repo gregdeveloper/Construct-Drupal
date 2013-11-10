@@ -10,9 +10,9 @@
 function construct_portfolio_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-portfolio_category-body'
-  $field_instances['node-portfolio_category-body'] = array(
-    'bundle' => 'portfolio_category',
+  // Exported field_instance: 'node-construct_portfolio_category-body'
+  $field_instances['node-construct_portfolio_category-body'] = array(
+    'bundle' => 'construct_portfolio_category',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -58,9 +58,9 @@ function construct_portfolio_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-portfolio_category-field_image'
-  $field_instances['node-portfolio_category-field_image'] = array(
-    'bundle' => 'portfolio_category',
+  // Exported field_instance: 'node-construct_portfolio_category-field_image'
+  $field_instances['node-construct_portfolio_category-field_image'] = array(
+    'bundle' => 'construct_portfolio_category',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -109,9 +109,9 @@ function construct_portfolio_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-portfolio_category-field_tags'
-  $field_instances['node-portfolio_category-field_tags'] = array(
-    'bundle' => 'portfolio_category',
+  // Exported field_instance: 'node-construct_portfolio_category-field_tags'
+  $field_instances['node-construct_portfolio_category-field_tags'] = array(
+    'bundle' => 'construct_portfolio_category',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -150,9 +150,9 @@ function construct_portfolio_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-portfolio_project-body'
-  $field_instances['node-portfolio_project-body'] = array(
-    'bundle' => 'portfolio_project',
+  // Exported field_instance: 'node-construct_portfolio_project-body'
+  $field_instances['node-construct_portfolio_project-body'] = array(
+    'bundle' => 'construct_portfolio_project',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -198,9 +198,9 @@ function construct_portfolio_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-portfolio_project-field_image'
-  $field_instances['node-portfolio_project-field_image'] = array(
-    'bundle' => 'portfolio_project',
+  // Exported field_instance: 'node-construct_portfolio_project-field_image'
+  $field_instances['node-construct_portfolio_project-field_image'] = array(
+    'bundle' => 'construct_portfolio_project',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -249,9 +249,9 @@ function construct_portfolio_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-portfolio_project-field_tags'
-  $field_instances['node-portfolio_project-field_tags'] = array(
-    'bundle' => 'portfolio_project',
+  // Exported field_instance: 'node-construct_portfolio_project-field_tags'
+  $field_instances['node-construct_portfolio_project-field_tags'] = array(
+    'bundle' => 'construct_portfolio_project',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
