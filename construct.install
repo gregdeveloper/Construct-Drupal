@@ -136,12 +136,14 @@ function construct_install() {
   /*
    * Create Home node (https://drupal.org/node/1388922)
    */
+  /* THIS SHOULD NOW BE DONE BY CONSTRUCT CONTENT FEATURE
   $node = new stdClass();
   $node->title = 'Home';
   $node->type = 'construct_page';
   node_object_prepare($node); // Sets some defaults. Invokes hook_prepare() and hook_node_prepare().
   $node = node_submit($node); // Prepare node for saving
   node_save($node);
+   */
   
   /*
    * Set Front page to /home
