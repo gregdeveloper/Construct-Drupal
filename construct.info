@@ -93,6 +93,7 @@ dependencies[] = xmlsitemap_menu
 dependencies[] = xmlsitemap_node
 
 ; Construct Features
+
 dependencies[] = construct_content
 dependencies[] = construct_images
 dependencies[] = construct_maps
@@ -100,6 +101,7 @@ dependencies[] = construct_news
 dependencies[] = construct_roles
 dependencies[] = construct_services
 dependencies[] = construct_slideshows
+
 
 ; System Requirements.
 ; php_memory_limit = 128M
