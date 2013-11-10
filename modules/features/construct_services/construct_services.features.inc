@@ -16,7 +16,7 @@ function construct_services_views_api($module = NULL, $api = NULL) {
  */
 function construct_services_node_info() {
   $items = array(
-    'service' => array(
+    'construct_service' => array(
       'name' => t('Service'),
       'base' => 'node_content',
       'description' => '',
@@ -24,7 +24,7 @@ function construct_services_node_info() {
       'title_label' => t('Title'),
       'help' => '',
     ),
-    'services_category' => array(
+    'construct_services_category' => array(
       'name' => t('Services Category'),
       'base' => 'node_content',
       'description' => '',
