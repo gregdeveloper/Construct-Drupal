@@ -154,7 +154,6 @@ function construct_install() {
     'menu_name' => 'main-menu',
   );
   menu_link_save($item);
-
   // Update the menu router information.
   menu_rebuild();
   

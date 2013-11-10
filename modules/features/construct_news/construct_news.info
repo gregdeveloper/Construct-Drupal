@@ -23,7 +23,6 @@ features[field_instance][] = node-article-field_tags
 features[field_instance][] = node-news_category-body
 features[field_instance][] = node-news_category-field_image
 features[field_instance][] = node-news_category-field_tags
-features[node][] = article
 features[node][] = news_category
 features[views_view][] = news
 features_exclude[dependencies][products] = products

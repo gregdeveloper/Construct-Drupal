@@ -53,7 +53,7 @@ function construct_slideshows_flexslider_default_presets() {
     'pauseText' => 'Pause',
     'playText' => 'Play',
     'randomize' => 0,
-    'animationLoop' => 1,
+    'animationLoop' => 0,
     'pauseOnAction' => 1,
     'pauseOnHover' => 0,
     'manualControls' => '',
@@ -66,7 +66,7 @@ function construct_slideshows_flexslider_default_presets() {
   $preset->name = 'slider';
   $preset->title = 'Slider';
   $preset->theme = 'classic';
-  $preset->imagestyle_normal = 'flexslider_full';
+  $preset->imagestyle_normal = 'banner__1350x500_';
   $preset->imagestyle_thumbnail = 'flexslider_thumbnail';
   $preset->options = array(
     'namespace' => 'flex-',
