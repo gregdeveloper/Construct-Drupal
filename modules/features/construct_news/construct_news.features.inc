@@ -33,7 +33,7 @@ function construct_news_node_info() {
       'title_label' => t('Title'),
       'help' => '',
     ),
-    'news_category' => array(
+    'construct_news_category' => array(
       'name' => t('News Category'),
       'base' => 'node_content',
       'description' => '',

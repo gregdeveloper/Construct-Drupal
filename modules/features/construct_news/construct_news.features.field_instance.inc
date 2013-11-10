@@ -151,9 +151,9 @@ function construct_news_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-news_category-body'
-  $field_instances['node-news_category-body'] = array(
-    'bundle' => 'news_category',
+  // Exported field_instance: 'node-construct_news_category-body'
+  $field_instances['node-construct_news_category-body'] = array(
+    'bundle' => 'construct_news_category',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -199,9 +199,9 @@ function construct_news_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-news_category-field_image'
-  $field_instances['node-news_category-field_image'] = array(
-    'bundle' => 'news_category',
+  // Exported field_instance: 'node-construct_news_category-field_image'
+  $field_instances['node-construct_news_category-field_image'] = array(
+    'bundle' => 'construct_news_category',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -250,9 +250,9 @@ function construct_news_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-news_category-field_tags'
-  $field_instances['node-news_category-field_tags'] = array(
-    'bundle' => 'news_category',
+  // Exported field_instance: 'node-construct_news_category-field_tags'
+  $field_instances['node-construct_news_category-field_tags'] = array(
+    'bundle' => 'construct_news_category',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
