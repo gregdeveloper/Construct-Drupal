@@ -97,13 +97,13 @@ function teams_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_team'
-  $field_bases['field_team'] = array(
+  // Exported field_base: 'field_construct_team'
+  $field_bases['field_construct_team'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_team',
+    'field_name' => 'field_construct_team',
     'foreign keys' => array(
       'node' => array(
         'columns' => array(
@@ -131,7 +131,7 @@ function teams_field_default_field_bases() {
           'type' => 'none',
         ),
         'target_bundles' => array(
-          'team' => 'team',
+          'construct_team' => 'construct_team',
         ),
       ),
       'target_type' => 'node',

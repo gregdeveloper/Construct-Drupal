@@ -16,7 +16,7 @@ function construct_teams_views_api($module = NULL, $api = NULL) {
  */
 function construct_teams_node_info() {
   $items = array(
-    'team' => array(
+    'construct_team' => array(
       'name' => t('Team'),
       'base' => 'node_content',
       'description' => '',
@@ -24,7 +24,7 @@ function construct_teams_node_info() {
       'title_label' => t('Title'),
       'help' => '',
     ),
-    'team_member' => array(
+    'construct_team_member' => array(
       'name' => t('Team Member'),
       'base' => 'node_content',
       'description' => '',

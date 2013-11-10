@@ -71,7 +71,7 @@ function construct_teams_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'team' => 'team',
+    'construct_team' => 'construct_team',
   );
 
   /* Display: Teams Page */
@@ -103,7 +103,7 @@ function construct_teams_views_default_views() {
   $handler->display->display_options['arguments']['nid']['specify_validation'] = TRUE;
   $handler->display->display_options['arguments']['nid']['validate']['type'] = 'node';
   $handler->display->display_options['arguments']['nid']['validate_options']['types'] = array(
-    'team' => 'team',
+    'construct_team' => 'construct_team',
   );
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
@@ -119,7 +119,7 @@ function construct_teams_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'team_member' => 'team_member',
+    'construct_team_member' => 'construct_team_member',
   );
 
   /* Display: Teams Carousel */
@@ -172,7 +172,7 @@ function construct_teams_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'team' => 'team',
+    'construct_team' => 'construct_team',
   );
 
   /* Display: Teams Slider */

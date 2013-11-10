@@ -10,9 +10,9 @@
 function construct_teams_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-team-body'
-  $field_instances['node-team-body'] = array(
-    'bundle' => 'team',
+  // Exported field_instance: 'node-construct_team-body'
+  $field_instances['node-construct_team-body'] = array(
+    'bundle' => 'construct_team',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -58,9 +58,9 @@ function construct_teams_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-team-field_image'
-  $field_instances['node-team-field_image'] = array(
-    'bundle' => 'team',
+  // Exported field_instance: 'node-construct_team-field_image'
+  $field_instances['node-construct_team-field_image'] = array(
+    'bundle' => 'construct_team',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -109,9 +109,9 @@ function construct_teams_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-team-field_tags'
-  $field_instances['node-team-field_tags'] = array(
-    'bundle' => 'team',
+  // Exported field_instance: 'node-construct_team-field_tags'
+  $field_instances['node-construct_team-field_tags'] = array(
+    'bundle' => 'construct_team',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -150,9 +150,9 @@ function construct_teams_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-team_member-body'
-  $field_instances['node-team_member-body'] = array(
-    'bundle' => 'team_member',
+  // Exported field_instance: 'node-construct_team_member-body'
+  $field_instances['node-construct_team_member-body'] = array(
+    'bundle' => 'construct_team_member',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -198,9 +198,9 @@ function construct_teams_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-team_member-field_image'
-  $field_instances['node-team_member-field_image'] = array(
-    'bundle' => 'team_member',
+  // Exported field_instance: 'node-construct_team_member-field_image'
+  $field_instances['node-construct_team_member-field_image'] = array(
+    'bundle' => 'construct_team_member',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -249,9 +249,9 @@ function construct_teams_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-team_member-field_tags'
-  $field_instances['node-team_member-field_tags'] = array(
-    'bundle' => 'team_member',
+  // Exported field_instance: 'node-construct_team_member-field_tags'
+  $field_instances['node-construct_team_member-field_tags'] = array(
+    'bundle' => 'construct_team_member',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
