@@ -57,6 +57,48 @@ function construct_install() {
           ->condition('delta','powered-by')
           ->execute();
   
+  /*
+   * Enable Blocks
+   */
+  $default_theme = variable_get('theme_default');
+  $blocks = array(
+    array(
+      'module' => 'views',
+      'delta' => 'news-construct_services_slider',
+      'theme' => $default_theme,
+      'status' => 1,
+      'weight' => 0,
+      'region' => 'slider',
+      'pages' => '<front>',
+      'cache' => -1,
+    ),
+    array(
+      'module' => 'views',
+      'delta' => 'news-construct_news_carousel',
+      'theme' => $default_theme,
+      'status' => 1,
+      'weight' => 0,
+      'region' => 'featured',
+      'pages' => '<front>',
+      'cache' => -1,
+    ),
+    array(
+      'module' => 'views',
+      'delta' => 'find_us-construct_find_us_block',
+      'theme' => $default_theme,
+      'status' => 1,
+      'weight' => 0,
+      'region' => 'prefooter',
+      'pages' => '',
+      'cache' => -1,
+    )
+  );
+  $query = db_insert('block')->fields(array('module', 'delta', 'theme', 'status', 'weight', 'region', 'pages', 'cache'));
+  foreach ($blocks as $block) {
+    $query->values($block);
+  }
+  $query->execute();
+  
   /**
    * Default Settings
    */
@@ -101,6 +143,20 @@ function construct_install() {
    */
   variable_set('site_frontpage', 'home');
   variable_set('weight_frontpage', '0');
+  
+  /*
+   * Add Contact Us to the main menu
+   */
+  // Create a Home link in the main menu.
+  $item = array(
+    'link_title' => st('Contact Us'),
+    'link_path' => 'contact',
+    'menu_name' => 'main-menu',
+  );
+  menu_link_save($item);
+
+  // Update the menu router information.
+  menu_rebuild();
   
 }
 

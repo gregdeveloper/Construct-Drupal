@@ -48,3 +48,9 @@ h5{
   -o-box-shadow: none;
   box-shadow: none;
 }
+.flexslider .slides > li {
+  margin-right:20px;
+}
+.flexslider .flex-direction-nav {
+  line-height:normal;
+}

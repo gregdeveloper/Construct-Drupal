@@ -65,6 +65,14 @@
   clear: both;
 }
 
+/* Slider */
+
+#slider .section{
+  width: 100%;
+  max-width: none;
+  min-height: 300px; /* Shows content background slideshow if no slider */
+}
+
 /* Navigation bar */
 @media all and (min-width: 480px) {
 

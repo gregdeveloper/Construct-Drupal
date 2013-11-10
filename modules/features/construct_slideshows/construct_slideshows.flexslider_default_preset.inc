@@ -17,7 +17,7 @@ function construct_slideshows_flexslider_default_presets() {
   $preset->title = 'Carousel';
   $preset->theme = 'classic';
   $preset->imagestyle_normal = 'flexslider_full';
-  $preset->imagestyle_thumbnail = 'flexslider_thumbnail';
+  $preset->imagestyle_thumbnail = 'square__480x480_';
   $preset->options = array(
     'namespace' => 'flex-',
     'selector' => '.slides > li',
