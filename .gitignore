@@ -1,2 +1,3 @@
 # Ignore netbeans project files
 /nbproject/
+/construct/nbproject/private/
