@@ -4,9 +4,9 @@ core = 7.x
 dependencies[] = block
 files[] = nodeblock.module
 
-; Information added by drupal.org packaging script on 2013-10-25
-version = "7.x-1.4+6-dev"
+; Information added by  packaging script on 2013-11-04
+version = "7.x-1.4+7-dev"
 core = "7.x"
 project = "nodeblock"
-datestamp = "1382707237"
+datestamp = "1383577705"
 

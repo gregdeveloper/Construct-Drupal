@@ -476,6 +476,7 @@ function nodeblock_block_info() {
   $blocks = array();
   if (_nodeblock_table_exists()) {
     $types = node_type_get_types();
+
     // Deselect types that aren't nodeblock enabled
     foreach ($types as $key => $type) {
       if(!nodeblock_type_enabled($type)){
@@ -483,19 +484,21 @@ function nodeblock_block_info() {
       }
     }
 
-    // Fetch all nodes of the selected types, excluding translations.
-    $request = db_select('node', 'n')
-      ->fields('n', array('title', 'nid'))
-      ->condition('n.type', array_keys($types), 'IN')
-      ->condition(db_or()->where('n.nid = n.tnid')->condition('n.tnid', 0));
+    if ($types) {
+      // Fetch all nodes of the selected types, excluding translations.
+      $request = db_select('node', 'n')
+        ->fields('n', array('title', 'nid'))
+        ->condition('n.type', array_keys($types), 'IN')
+        ->condition(db_or()->where('n.nid = n.tnid')->condition('n.tnid', 0));
 
-    $request->addJoin('INNER', 'nodeblock', 'nb', 'nb.nid = n.nid');
-    $request->fields('nb', array('machine_name'))
-      ->condition('nb.enabled', 1);
+      $request->addJoin('INNER', 'nodeblock', 'nb', 'nb.nid = n.nid');
+      $request->fields('nb', array('machine_name'))
+        ->condition('nb.enabled', 1);
 
-    $results = $request->execute();
-    foreach ($results as $node) {
-      $blocks[$node->machine_name] = array('info' => $node->title, 'nid' => $node->nid);
+      $results = $request->execute();
+      foreach ($results as $node) {
+        $blocks[$node->machine_name] = array('info' => $node->title, 'nid' => $node->nid);
+      }
     }
   }
 
