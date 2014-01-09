@@ -42,6 +42,8 @@ Drupal.quicktabs.clickHandler = function(event) {
 
   // Hide all tabpages.
   tab.container.children().addClass('quicktabs-hide');
+  //tab.container.children().fadeOut(500).addClass('quicktabs-hide');
+  //tab.container.children().fadeIn(1500) // added a fade effect to quicktabs
   
   if (!tab.tabpage.hasClass("quicktabs-tabpage")) {
     tab = new Drupal.quicktabs.tab(element);
